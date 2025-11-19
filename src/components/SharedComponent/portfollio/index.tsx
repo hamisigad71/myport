@@ -21,7 +21,7 @@ type Project = {
   category: (typeof categories)[number];
 };
 
-const caseStudyPath = "/projects";
+const caseStudyPath = "/projects/index.html";
 
 const projects: Project[] = [
   {

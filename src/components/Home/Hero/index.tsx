@@ -15,7 +15,7 @@ const Hero = () => {
             data-aos-delay="200"
             data-aos-duration="1000"
           >
-            <div className="flex gap-2 items-center">
+            <div className="flex gap-2 items-center pt-10">
               <span className="w-3 h-3 rounded-full bg-success"></span>
               <span className="font-medium text-midnight_text text-sm lg:text-base dark:text-white/50">
                 Online 24/7

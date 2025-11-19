@@ -4,7 +4,7 @@ export const menuItems = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
   { name: "Services", href: "#services" },
-  { name: "Portfolio", href: "#portfolio" },
+  { name: "Portfolio", href: "/portfolio" },
   { name: "Testimonials", href: "#testimonials" },
   { name: "Blog", href: "/#blog" },
 ];

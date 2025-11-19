@@ -21,6 +21,8 @@ type Project = {
   category: (typeof categories)[number];
 };
 
+const caseStudyPath = "/projects";
+
 const projects: Project[] = [
   {
     title: "Aura Finance Dashboard",
@@ -30,7 +32,7 @@ const projects: Project[] = [
       "https://lh3.googleusercontent.com/aida-public/AB6AXuDmiqNRkzNxkFO0WjJJEadLZ9yCC3v6zejqskpwjvmxzt3bEgEvYHo6FSGq2tWgXh_MMA1YwwmwhqkJiaTnmK6zu6pFgTBPGOhTLpbpSAQy1BZeYpSyqbRR9sOeGuwch2yBnAHuCgz5_ndCBA0Ew85m0KmCN_v65kHAL-UedneqBIQvRTXeKYugZSzgP4PKXYWLO-kQlrhCWpytbN8eGsBfO8yJhXaCTPlqAiri-ISiWLWmPxZzW5YLZIPVre0Lu1RJ9-w43Kp4-AM",
     alt: "Screenshot of a financial analytics dashboard",
     tags: ["React", "Python", "D3.js"],
-    href: "/",
+    href: caseStudyPath,
     category: "Dashboards",
   },
   {
@@ -41,7 +43,7 @@ const projects: Project[] = [
       "https://lh3.googleusercontent.com/aida-public/AB6AXuDn4N0wASVSreca7uVqmI9Z94GQfUcQzmdZ8LEmp5Vc_a7wE1jEiaq2p1WNFtokHU1ruI1dtnZ6BJ9_9rJzOUle8F7OknEVzBD2zEthGSuW1PoX_9D2Lqzvvf2Nl_Cnk0OUqBMIS5PhA2xBuKDx0gZagZ7VhWSeeIQTV-TmDmku_xr2K5MAUN5Y9zEUMyS3gIuvqXSvBvCvZnPb-1lX3ChGigv-w7RhZ3YuaAeaUDVzb9LykFecAE_nH-NAYnuO1WM6Ol45hdeDhn8",
     alt: "UI of a professional social networking mobile app",
     tags: ["SwiftUI", "Firebase", "Node.js"],
-    href: "/",
+    href: caseStudyPath,
     category: "Mobile Apps",
   },
   {
@@ -52,7 +54,7 @@ const projects: Project[] = [
       "https://i.pinimg.com/1200x/4a/60/a3/4a60a3cbcd2b59cd619193ca6b25cde2.jpg",
     alt: "Abstract visualization of an AI agent workflow",
     tags: ["Python", "TensorFlow", "LangChain"],
-    href: "/",
+    href: caseStudyPath,
     category: "AI Agents",
   },
   {
@@ -63,7 +65,7 @@ const projects: Project[] = [
       "https://i.pinimg.com/1200x/a3/5c/33/a35c33e8813ed8b6bfe1ec40e9d03ddf.jpg",
     alt: "Modern e-commerce dashboard mockup",
     tags: ["Next.js", "Shopify", "TailwindCSS"],
-    href: "/",
+    href: caseStudyPath,
     category: "Websites",
   },
   {
@@ -74,7 +76,7 @@ const projects: Project[] = [
       "https://i.pinimg.com/736x/49/74/92/4974923484daa921b5b275e22cc90805.jpg",
     alt: "Telemedicine application interface",
     tags: ["React Native", "GraphQL", "AWS"],
-    href: "/",
+    href: caseStudyPath,
     category: "Mobile Apps",
   },
   {
@@ -85,7 +87,7 @@ const projects: Project[] = [
       "https://i.pinimg.com/1200x/b9/58/a2/b958a22119cf8e415e42b275f712c77e.jpg",
     alt: "Operations analytics UI",
     tags: ["Vue", "Rust", "PostgreSQL"],
-    href: "/",
+    href: caseStudyPath,
     category: "Dashboards",
   },
 ];
@@ -170,6 +172,8 @@ const Portfolio = () => {
                 </div>
                 <Link
                   href={project.href}
+                  target="_blank"
+                  rel="noreferrer"
                   className="mt-2 flex h-11 w-full items-center justify-center rounded-lg bg-primary text-base font-medium text-white shadow-md transition hover:bg-primary/90"
                 >
                   View Case Study

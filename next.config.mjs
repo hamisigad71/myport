@@ -1,18 +1,26 @@
 /** @type {import('next').NextConfig} */
 
-const isProd = process.env.NODE_ENV === "production";
-const basePath = isProd ? `/venus-nextjs` : "";
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const useStaticExport = process.env.NEXT_STATIC_EXPORT === "true";
 
 const nextConfig = {
-  output: "export",
-  basePath,
-  assetPrefix: basePath,
+  ...(useStaticExport
+    ? {
+        output: "export",
+        trailingSlash: true,
+      }
+    : {}),
+  ...(basePath
+    ? {
+        basePath,
+        assetPrefix: basePath,
+        env: {
+          NEXT_PUBLIC_BASE_PATH: basePath,
+        },
+      }
+    : {}),
   images: {
     unoptimized: true,
-  },
-  trailingSlash: true,
-  env: {
-    NEXT_PUBLIC_BASE_PATH: basePath,
   },
 };
 

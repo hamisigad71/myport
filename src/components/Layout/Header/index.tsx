@@ -70,15 +70,15 @@ const Header: React.FC = () => {
             : "h-24 bg-transparent"
         }`}
       >
-        <div className="container mx-auto px-6 lg:px-12 h-full flex items-center justify-between gap-4">
+        <div className="container mx-auto px-6 lg:px-12 h-full grid grid-cols-[auto,1fr,auto] items-center gap-6">
           {/* Left: Logo */}
           <div className="shrink-0">
             <Logo />
           </div>
 
           {/* Center: Desktop Navigation – Perfectly Centered */}
-          <nav className="hidden lg:flex flex-1 justify-center items-center px-3">
-            <ul className="flex items-center gap-6">
+          <nav className="hidden lg:flex flex-1 justify-center items-center px-2">
+            <ul className="flex flex-wrap items-center justify-center gap-6 xl:gap-8">
               {headerData.map((item, i) => (
                 <HeaderLink key={i} item={item} />
               ))}
@@ -86,7 +86,7 @@ const Header: React.FC = () => {
           </nav>
 
           {/* Right: Theme + Auth Buttons – Perfectly Aligned */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center justify-end gap-3 pl-2 lg:pl-4">
             {/* Theme Toggle */}
             <button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}

@@ -1,7 +1,12 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { Progress as ProgressData } from "@/app/api/data"; // Assuming Progress is correctly imported
+// Local progress data
+const ProgressData = [
+  { title: "Front-end development", Progress: 95 },
+  { title: "AI agent development", Progress: 84 },
+  { title: "UI & Visual Design", Progress: 90 },
+];
 
 // Define the interface for ProgressItem
 interface ProgressItem {

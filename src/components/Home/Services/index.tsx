@@ -1,8 +1,28 @@
 import React from "react";
 import Link from "next/link";
-import { Servicebox } from "@/app/api/data";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
+
+const Servicebox = [
+  {
+    icon: "/images/services/ux-design-product_1.svg",
+    title: "Front-end development",
+    description:
+      "I build clean, fast, and responsive web interfaces using modern frameworks like React and advanced UI components. My focus is on performance, accessibility, and delivering smooth user experiences across all devices.",
+  },
+  {
+    icon: "/images/services/perfomance-optimization.svg",
+    title: "AI agent development",
+    description:
+      "I create intuitive and user-centered interface designs that make products easy to navigate and enjoyable to use. My UI work blends functionality with modern design principles.",
+  },
+  {
+    icon: "/images/services/ux-design-product_2.svg",
+    title: "UX & Products Design",
+    description:
+      "I specialize in crafting visually appealing digital assets—clean layouts, bold typography, and attention-grabbing visuals that elevate brand identity and create strong first impressions..",
+  },
+];
 
 const Services = () => {
   return (

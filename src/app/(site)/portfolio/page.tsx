@@ -8,7 +8,7 @@ const PortfolioPage = () => {
     // Check for saved theme preference or default to light mode
     const savedTheme = localStorage.getItem("theme");
     const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
+      "(prefers-color-scheme: dark)",
     ).matches;
 
     if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
@@ -51,11 +51,9 @@ const PortfolioPage = () => {
     };
 
     addStylesheet("https://cdn.tailwindcss.com");
+    // BlinkMacSystemFont is a system font - no external loading needed
     addStylesheet(
-      "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-    );
-    addStylesheet(
-      "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined",
     );
 
     // Configure Tailwind
@@ -74,7 +72,7 @@ const PortfolioPage = () => {
                 "background-light": "#F8F9FA",
                 "background-dark": "#101622",
               },
-              fontFamily: { display: ["Inter", "sans-serif"] },
+              fontFamily: { display: ["BlinkMacSystemFont", "-apple-system", "Segoe UI", "Roboto", "system-ui", "sans-serif"] },
             },
           },
         };
@@ -185,8 +183,8 @@ const PortfolioPage = () => {
       // Adjust grid for different filters
       container.className =
         filter === "website"
-          ? "grid grid-cols-2 gap-7 md:gap-8 md:grid-cols-3 lg:grid-cols-4 auto-rows-fr"
-          : "grid grid-cols-2 gap-7 md:gap-8 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 auto-rows-fr";
+          ? "grid grid-cols-1 gap-6 sm:grid-cols-2 md:gap-8 md:grid-cols-3 lg:grid-cols-4 auto-rows-fr"
+          : "grid grid-cols-1 gap-6 sm:grid-cols-2 md:gap-8 md:grid-cols-3 xl:grid-cols-4 auto-rows-fr";
 
       toShow.forEach((proj, i) => {
         const card = document.createElement("div");
@@ -195,16 +193,19 @@ const PortfolioPage = () => {
         card.style.transitionDelay = `${i * 120}ms`;
 
         card.innerHTML = `
-          <div class="group flex flex-col h-full bg-white dark:bg-gray-800/60 rounded-3xl overflow-hidden shadow-xl border border-gray-200/70 dark:border-gray-700/70 hover:shadow-2xl hover:-translate-y-3 transition-all duration-400">
-            <div class="aspect-4/3 bg-cover bg-center" style="background-image: url('${
-              proj.img
-            }')"></div>
-            <div class="p-5 md:p-6 flex flex-col flex-1 justify-between gap-4">
+          <article class="group flex flex-col h-full bg-white dark:bg-gray-900/60 rounded-3xl overflow-hidden shadow-xl border border-gray-200/70 dark:border-gray-700/70 hover:shadow-2xl hover:-translate-y-2 transition-all duration-400">
+            <div class="relative aspect-16/10 sm:aspect-4/3 overflow-hidden bg-gray-100 dark:bg-gray-800">
+              <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('${
+                proj.img
+              }')"></div>
+              <div class="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            </div>
+            <div class="p-4 sm:p-5 md:p-6 flex flex-col flex-1 justify-between gap-3 md:gap-4">
               <div>
-                <h3 class="text-lg md:text-xl font-bold text-text-heading dark:text-white line-clamp-2 leading-tight">
+                <h3 class="text-lg sm:text-xl font-bold text-text-heading dark:text-white line-clamp-2 leading-tight">
                   ${proj.title}
                 </h3>
-                <p class="mt-3 text-sm md:text-base text-text-body dark:text-gray-400 line-clamp-2 leading-relaxed">
+                <p class="mt-2 text-sm sm:text-base text-text-body dark:text-gray-400 line-clamp-3 leading-relaxed">
                   ${proj.desc}
                 </p>
               </div>
@@ -212,17 +213,17 @@ const PortfolioPage = () => {
                 ${proj.tags
                   .map(
                     (t) =>
-                      `<span class="px-3 py-1.5 text-xs md:text-sm font-medium rounded-full bg-secondary/10 dark:bg-secondary/20 text-secondary dark:text-blue-300">
+                      `<span class="px-2.5 py-1 text-xs font-medium rounded-full bg-secondary/10 dark:bg-secondary/20 text-secondary dark:text-blue-300">
                     ${t}
-                  </span>`
+                  </span>`,
                   )
                   .join("")}
               </div>
-              <button class="mt-5 w-full py-3.5 bg-primary text-white font-semibold rounded-2xl hover:bg-primary/90 transition-all shadow-md text-sm md:text-base">
+              <button class="mt-4 w-full py-3 bg-primary text-white font-semibold rounded-2xl hover:bg-primary/90 transition-all shadow-md text-sm sm:text-base">
                 View Case Study
               </button>
             </div>
-          </div>
+          </article>
         `;
 
         container.appendChild(card);
@@ -241,7 +242,11 @@ const PortfolioPage = () => {
     <div>
       <style jsx global>{`
         .material-symbols-outlined {
-          font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+          font-variation-settings:
+            "FILL" 0,
+            "wght" 400,
+            "GRAD" 0,
+            "opsz" 24;
         }
         .scrollbar-hide {
           -ms-overflow-style: none;
@@ -251,11 +256,19 @@ const PortfolioPage = () => {
           display: none;
         }
         body {
-          font-family: "Inter", sans-serif;
+          font-family:
+            BlinkMacSystemFont,
+            -apple-system,
+            "Segoe UI",
+            "Roboto",
+            system-ui,
+            sans-serif;
           background-color: #f8f9fa !important;
           color: #495057;
           min-height: 100vh;
-          transition: background-color 0.3s ease, color 0.3s ease;
+          transition:
+            background-color 0.3s ease,
+            color 0.3s ease;
         }
         html.dark body {
           background-color: #101622 !important;
@@ -278,7 +291,8 @@ const PortfolioPage = () => {
           isDark ? "bg-gray-900 text-gray-300" : "bg-gray-50 text-gray-700"
         }`}
         style={{
-          fontFamily: "Inter, sans-serif",
+          fontFamily:
+            "BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto', system-ui, sans-serif",
           backgroundColor: isDark ? "#101622" : "#F8F9FA",
           color: isDark ? "#d1d5db" : "#495057",
           minHeight: "100vh",

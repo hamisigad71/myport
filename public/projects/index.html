@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html class="light dark" lang="en">
 
 <head>
@@ -25,11 +25,12 @@
           fontFamily: { display: ["Inter", "sans-serif"] },
         },
       },
-    }
+    };
   </script>
+
   <style>
     .material-symbols-outlined {
-      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
     }
 
     .scrollbar-hide {
@@ -41,7 +42,14 @@
       display: none;
     }
 
-    /* Professional Loader Styles */
+    html.dark {
+      background-color: #101622 !important;
+    }
+
+    html.dark body {
+      background-color: #101622 !important;
+    }
+
     #page-loader {
       position: fixed;
       top: 0;
@@ -57,7 +65,7 @@
     }
 
     html.dark #page-loader {
-      background: #FFFFFF;
+      background: #0f172a;
     }
 
     #page-loader.hidden {
@@ -65,25 +73,14 @@
       visibility: hidden;
     }
 
-    .loader-content {
-      text-align: center;
-    }
-
     .loader-spinner {
       width: 60px;
       height: 60px;
-      border: 4px solid rgba(13, 71, 161, 0.1);
+      border: 5px solid #e2e8f0;
       border-top-color: #0D47A1;
       border-right-color: #4285F4;
       border-radius: 50%;
       animation: spin 1s linear infinite;
-      margin: 0 auto 20px;
-    }
-
-    html.dark .loader-spinner {
-      border: 4px solid rgba(13, 71, 161, 0.2);
-      border-top-color: #0D47A1;
-      border-right-color: #4285F4;
     }
 
     @keyframes spin {
@@ -91,240 +88,190 @@
         transform: rotate(360deg);
       }
     }
-
-    .loader-text {
-      font-size: 16px;
-      font-weight: 600;
-      color: #0D47A1;
-      letter-spacing: 0.5px;
-    }
-
-    html.dark .loader-text {
-      color: #0D47A1;
-    }
-
-    .loader-dots {
-      display: inline-flex;
-      gap: 4px;
-      margin-left: 4px;
-    }
-
-    .loader-dots span {
-      width: 6px;
-      height: 6px;
-      background: #4285F4;
-      border-radius: 50%;
-      animation: bounce 1.4s infinite ease-in-out both;
-    }
-
-    html.dark .loader-dots span {
-      background: #0D47A1;
-    }
-
-    .loader-dots span:nth-child(1) {
-      animation-delay: -0.32s;
-    }
-
-    .loader-dots span:nth-child(2) {
-      animation-delay: -0.16s;
-    }
-
-    @keyframes bounce {
-
-      0%,
-      80%,
-      100% {
-        transform: scale(0);
-        opacity: 0.5;
-      }
-
-      40% {
-        transform: scale(1);
-        opacity: 1;
-      }
-    }
   </style>
 </head>
 
-<body class="font-display bg-background-light dark:bg-background-dark text-text-body dark:text-gray-300 min-h-screen">
-  <!-- Professional Loader -->
+<body
+  class="font-display bg-background-light dark:bg-background-dark text-text-body dark:text-gray-300 min-h-screen transition-colors duration-300">
+
+  <!-- Loader -->
   <div id="page-loader">
-    <div class="loader-content">
-      <div class="loader-spinner"></div>
-      <div class="loader-text">
-        Loading
-        <span class="loader-dots">
-          <span></span>
-          <span></span>
-          <span></span>
-        </span>
-      </div>
+    <div class="text-center">
+      <div class="loader-spinner mx-auto mb-4"></div>
+      <p class="text-primary font-semibold">Loading Portfolio...</p>
     </div>
   </div>
 
   <div class="flex flex-col min-h-screen">
+
     <!-- Header -->
     <header
-      class="sticky top-0 z-50 bg-background-light dark:bg-background-dark border-b border-gray-200/80 dark:border-gray-800/80 px-5 py-4 flex items-center justify-between">
-      <h1 class="text-2xl font-bold text-text-heading dark:text-white">My Work</h1>
-      <span class="material-symbols-outlined text-3xl cursor-pointer">menu</span>
+      class="sticky top-0 z-50 bg-background-light dark:bg-background-dark/80 backdrop-blur-md border-b border-gray-200/60 dark:border-gray-800/60 px-5 py-5">
+      <div class="flex items-center justify-between">
+        <h1 class="text-2xl md:text-3xl font-bold text-text-heading dark:text-white">My Work</h1>
+        <div class="flex items-center gap-4">
+          <button id="theme-toggle" class="p-2.5 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition">
+            <svg id="sun-icon" class="w-6 h-6 hidden text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd"
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                clip-rule="evenodd" />
+            </svg>
+            <svg id="moon-icon" class="w-6 h-6 text-gray-700 dark:text-gray-300" fill="currentColor"
+              viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+            </svg>
+          </button>
+          <span class="material-symbols-outlined text-3xl cursor-pointer select-none">menu</span>
+        </div>
+      </div>
     </header>
 
-    <!-- Filter Buttons -->
+    <!-- Filter Bar -->
+    <section class="px-5 pt-6">
+      <div id="portfolio-filter-bar" class="flex gap-3 overflow-x-auto scrollbar-hide pb-2"></div>
+    </section>
 
-
-    <!-- Date -->
-    <div class="px-6 mb-6">
-      <p class="text-xs text-gray-500 dark:text-gray-400">Last updated: <strong>November 18, 2025 12:15 AM EAT</strong>
+    <!-- Last Updated -->
+    <div class="px-5 mt-4 mb-6">
+      <p class="text-xs text-gray-500 dark:text-gray-400">
+        Last updated: <strong>November 20, 2025</strong>
       </p>
     </div>
 
-    <!-- Projects Grid – Perfectly Balanced on Mobile -->
-    <main class="flex-1 px-5 pb-10">
-      <div id="projects-container" class="grid grid-cols-2 gap-7 
-                md:gap-8 md:grid-cols-3 
-                lg:grid-cols-3 
-                xl:grid-cols-4 
-                auto-rows-fr">
+    <!-- Projects Grid -->
+    <main class="flex-1 px-4 sm:px-6 pb-12">
+      <div id="projects-container"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-6 lg:gap-8 auto-rows-fr">
         <!-- Cards injected here -->
       </div>
     </main>
   </div>
 
   <script>
-    const projects = [
-      { title: "Aura Finance Dashboard", desc: "Real-time financial analytics platform", tags: ["React", "D3.js"], category: "dashboard", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDmiqNRkzNxkFO0WjJJEadLZ9yCC3v6zejqskpwjvmxzt3bEgEvYHo6FSGq2tWgXh_MMA1YwwmwhqkJiaTnmK6zu6pFgTBPGOhTLpbpSAQy1BZeYpSyqbRR9sOeGuwch2yBnAHuCgz5_ndCBA0Ew85m0KmCN_v65kHAL-UedneqBIQvRTXeKYugZSzgP4PKXYWLO-kQlrhCWpytbN8eGsBfO8yJhXaCTPlqAiri-ISiWLWmPxZzW5YLZIPVre0Lu1RJ9-w43Kp4-AM" },
-      { title: "Quantum Analytics", desc: "Scientific data visualization", tags: ["Vue.js", "WebGL"], category: "dashboard", img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80" },
-      { title: "SalesFlow Pro", desc: "Predictive CRM dashboard", tags: ["Next.js", "Chart.js"], category: "dashboard", img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80" },
-
-      { title: "ConnectSphere", desc: "Professional networking app", tags: ["SwiftUI", "Firebase"], category: "mobile", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDn4N0wASVSreca7uVqmI9Z94GQfUcQzmdZ8LEmp5Vc_a7wE1jEiaq2p1WNFtokHU1ruI1dtnZ6BJ9_9rJzOUle8F7OknEVzBD2zEthGSuW1PoX_9D2Lqzvvf2Nl_Cnk0OUqBMIS5PhA2xBuKDx0gZagZ7VhWSeeIQTV-TmDmku_xr2K5MAUN5Y9zEUMyS3gIuvqXSvBvCvZnPb-1lX3ChGigv-w7RhZ3YuaAeaUDVzb9LykFecAE_nH-NAYnuO1WM6Ol45hdeDhn8" },
-      { title: "HealthTrack Pro", desc: "AI health monitoring", tags: ["React Native"], category: "mobile", img: "https://i.pinimg.com/1200x/a3/5c/33/a35c33e8813ed8b6bfe1ec40e9d03ddf.jpg" },
-      { title: "TaskFlow", desc: "Smart productivity app", tags: ["Flutter"], category: "mobile", img: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80" },
-
-      { title: "Nexus Corporate", desc: "Enterprise site with 3D", tags: ["Next.js", "Framer"], category: "website", img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80" },
-      { title: "Studio X", desc: "Creative agency portfolio", tags: ["Astro", "GSAP"], category: "website", img: "https://i.pinimg.com/736x/c2/06/0c/c2060c2609f6e33b5d839086434c771c.jpg" },
-      { title: "EcomPulse", desc: "Blazing-fast e-commerce", tags: ["Shopify", "Vercel"], category: "website", img: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80" },
-      { title: "LearnFlow", desc: "Interactive learning platform", tags: ["Remix", "Stripe"], category: "website", img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80" },
-
-      { title: "IntelliAgent", desc: "Autonomous support agent", tags: ["N8N", "LangChain"], category: "ai", img: "https://i.pinimg.com/736x/55/3a/8c/553a8cf3426a3414dd4447bfcaf931cd.jpg" },
-      { title: "CodeBot", desc: "AI pair programmer", tags: ["Node.js", "Claude"], category: "ai", img: "https://images.unsplash.com/photo-1518432031352-d65fc8c30204?w=800&q=80" },
-      { title: "ContentEngine", desc: "AI marketing content", tags: ["Llama 3", "FastAPI"], category: "ai", img: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&q=80" }
-    ];
-
+    let projects = [], categories = [], activeFilter = "all";
     const container = document.getElementById("projects-container");
+    const filterBar = document.getElementById("portfolio-filter-bar");
+
+    function renderFilterButtons() {
+      filterBar.innerHTML = `<button class="filter-btn h-10 px-6 rounded-full transition-all ${activeFilter === 'all' ? 'bg-primary text-white shadow-lg' : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300'}" data-filter="all">All Projects</button>`;
+      categories.forEach(cat => {
+        const btn = document.createElement("button");
+        btn.className = `filter-btn h-10 px-6 rounded-full transition-all ${activeFilter === cat.slug ? 'bg-primary text-white shadow-lg' : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300'}`;
+        btn.textContent = cat.label;
+        btn.dataset.filter = cat.slug;
+        btn.onclick = () => { activeFilter = cat.slug; renderFilterButtons(); renderProjects(); };
+        filterBar.appendChild(btn);
+      });
+    }
 
     function renderProjects(filter = "all") {
       container.innerHTML = "";
       const filtered = filter === "all" ? projects : projects.filter(p => p.category === filter);
-      const limit = filter === "website" ? 4 : 3;
-      const toShow = filtered.slice(0, limit);
 
-      // Adjust grid for 4 cards
-      container.className = filter === "website"
-        ? "grid grid-cols-2 gap-7 md:gap-8 md:grid-cols-3 lg:grid-cols-4 auto-rows-fr"
-        : "grid grid-cols-2 gap-7 md:gap-8 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 auto-rows-fr";
+      if (!filtered.length) {
+        container.innerHTML = `<p class="col-span-full text-center py-20 text-gray-500 dark:text-gray-400 text-lg">No projects in this category yet.</p>`;
+        return;
+      }
 
-      toShow.forEach((proj, i) => {
+      filtered.forEach((proj, i) => {
         const card = document.createElement("div");
-        card.className = "opacity-0 translate-y-10 transition-all duration-700 ease-out";
-        card.style.transitionDelay = `${i * 120}ms`;
+        card.className = "opacity-0 translate-y-12 transition-all duration-700 ease-out";
+        card.style.animationDelay = `${i * 100}ms`;
 
         card.innerHTML = `
-        <div class="group flex flex-col h-full bg-white dark:bg-gray-800/60 rounded-3xl overflow-hidden shadow-xl border border-gray-200/70 dark:border-gray-700/70 hover:shadow-2xl hover:-translate-y-3 transition-all duration-400">
-          <!-- Image with better ratio on mobile -->
-          <div class="aspect-[4/3] bg-cover bg-center" style="background-image: url('${proj.img}')"></div>
-          
-          <div class="p-5 md:p-6 flex flex-col flex-1 justify-between gap-4">
-            <div>
-              <h3 class="text-lg md:text-xl font-bold text-text-heading dark:text-white line-clamp-2 leading-tight">
-                ${proj.title}
-              </h3>
-              <p class="mt-3 text-sm md:text-base text-text-body dark:text-gray-400 line-clamp-2 leading-relaxed">
-                ${proj.desc}
-              </p>
+          <article class="group h-full bg-white dark:bg-gray-800/70 rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border border-gray-200/60 dark:border-gray-700/50 
+                          hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 flex flex-col">
+
+            <!-- Responsive Image - Square on mobile -->
+            <div class="relative aspect-square sm:aspect-[4/3] overflow-hidden bg-gray-100 dark:bg-gray-900">
+              <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                   style="background-image: url('${proj.image || 'https://images.unsplash.com/photo-1517180107641-2d1a4e0b7e3e?w=800&q=80'}')"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
 
-            <div class="flex flex-wrap gap-2 mt-3">
-              ${proj.tags.map(t =>
-          `<span class="px-3 py-1.5 text-xs md:text-sm font-medium rounded-full bg-secondary/10 dark:bg-secondary/20 text-secondary dark:text-blue-300">
-                  ${t}
-                </span>`
-        ).join("")}
-            </div>
+            <!-- Card Content - Compact on mobile -->
+            <div class="p-3 sm:p-6 flex flex-col flex-1 justify-between">
+              <div>
+                <h3 class="text-base sm:text-xl font-bold text-gray-900 dark:text-white line-clamp-2 leading-tight mb-1.5 sm:mb-2">
+                  ${proj.title}
+                </h3>
+                <p class="text-xs sm:text-base text-gray-600 dark:text-gray-300 line-clamp-2 sm:line-clamp-3 leading-snug sm:leading-relaxed">
+                  ${proj.description}
+                </p>
+              </div>
 
-            <button class="mt-5 w-full py-3.5 bg-primary text-white font-semibold rounded-2xl hover:bg-primary/90 transition-all shadow-md text-sm md:text-base">
-              View Case Study
-            </button>
-          </div>
-        </div>
-      `;
+              <div class="flex flex-wrap gap-1.5 sm:gap-2 mt-2.5 sm:mt-4">
+                ${proj.tags?.map(t =>
+          `<span class="px-2 py-1 sm:px-3 sm:py-1.5 text-[10px] sm:text-xs font-medium rounded-full bg-secondary/10 dark:bg-secondary/20 text-secondary">
+                    ${t}
+                  </span>`
+        ).join("") || ''}
+              </div>
+
+              <a href="${proj.href}" target="_blank" rel="noopener noreferrer"
+                 class="mt-3 sm:mt-6 w-full py-2.5 sm:py-3.5 bg-primary hover:bg-primary/90 text-white font-semibold text-center rounded-xl sm:rounded-2xl transition-all shadow-md hover:shadow-lg text-xs sm:text-sm">
+                View Project
+              </a>
+            </div>
+          </article>
+        `;
 
         container.appendChild(card);
-        setTimeout(() => {
-          card.classList.replace("opacity-0", "opacity-100");
-          card.classList.replace("translate-y-10", "translate-y-0");
-        }, 100);
+        setTimeout(() => card.classList.replace("opacity-0", "opacity-100"), 50);
       });
     }
 
-    // Filter buttons – 100% working
-    document.querySelectorAll(".filter-btn").forEach(btn => {
-      btn.addEventListener("click", () => {
-        document.querySelectorAll(".filter-btn").forEach(b => {
-          b.classList.remove("active", "bg-primary", "text-white", "shadow-lg");
-          b.classList.add("bg-gray-200", "dark:bg-gray-700");
-        });
-        btn.classList.add("active", "bg-primary", "text-white", "shadow-lg");
-        btn.classList.remove("bg-gray-200", "dark:bg-gray-700");
+    // Load real data or fallback
+    async function loadProjects() {
+      try {
+        const res = await fetch("/api/portfolio");
+        if (!res.ok) throw new Error();
+        const data = await res.json();
+        projects = data.projects || [];
+        categories = [{ slug: "all", label: "All Projects" }, ...(data.categories || [])];
+      } catch (e) {
+        // Demo data if API fails
+        projects = [
+          { title: "E-Commerce Platform", description: "Modern online store with Stripe & Next.js", image: "", tags: ["Next.js", "Node"], category: "web", href: "#" },
+          { title: "AI Analytics Dashboard", description: "Real-time insights powered by machine learning", image: "", tags: ["React", "Python"], category: "ai", href: "#" },
+          { title: "Mobile Banking App", description: "Secure finance app for iOS & Android", image: "", tags: ["React Native"], category: "mobile", href: "#" },
+          { title: "SaaS Marketing Site", description: "High-conversion landing page system", image: "", tags: ["Tailwind", "Vue"], category: "web", href: "#" }
+        ];
+        categories = [{ slug: "all", label: "All Projects" }, { slug: "web", label: "Web" }, { slug: "mobile", label: "Mobile" }, { slug: "ai", label: "AI" }];
+      }
+      renderFilterButtons();
+      renderProjects();
+      setTimeout(() => document.getElementById("page-loader").classList.add("hidden"), 800);
+    }
 
-        renderProjects(btn.dataset.filter);
-      });
+    // Theme toggle
+    const html = document.documentElement;
+    const themeToggle = document.getElementById("theme-toggle");
+    const sun = document.getElementById("sun-icon");
+    const moon = document.getElementById("moon-icon");
+
+    if (localStorage.theme === "dark" || (!localStorage.theme && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+      html.classList.add("dark");
+      sun.classList.remove("hidden");
+      moon.classList.add("hidden");
+    }
+
+    themeToggle.addEventListener("click", () => {
+      html.classList.toggle("dark");
+      if (html.classList.contains("dark")) {
+        localStorage.theme = "dark";
+        sun.classList.remove("hidden");
+        moon.classList.add("hidden");
+      } else {
+        localStorage.theme = "light";
+        sun.classList.add("hidden");
+        moon.classList.remove("hidden");
+      }
     });
 
-    // Load All by default
-    renderProjects();
-
-    // Professional Loader - Hide when content is ready
-    const pageLoader = document.getElementById("page-loader");
-
-    function hideLoader() {
-      if (pageLoader && !pageLoader.classList.contains("hidden")) {
-        // Smooth fade out
-        pageLoader.classList.add("hidden");
-        // Remove from DOM after animation completes
-        setTimeout(() => {
-          if (pageLoader) {
-            pageLoader.style.display = "none";
-          }
-        }, 500);
-      }
-    }
-
-    // Hide loader after projects are rendered with smooth delay
-    function initLoader() {
-      // Wait for projects to render and animate in
-      setTimeout(() => {
-        // Check if container has content
-        const container = document.getElementById("projects-container");
-        if (container && container.children.length > 0) {
-          // Wait for card animations to start (100ms delay from renderProjects)
-          setTimeout(hideLoader, 800);
-        } else {
-          // Fallback if no content
-          setTimeout(hideLoader, 1000);
-        }
-      }, 100);
-    }
-
-    // Initialize loader hide after page load
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", initLoader);
-    } else {
-      initLoader();
-    }
-
-    // Fallback: always hide loader after max 2.5 seconds
-    setTimeout(hideLoader, 2500);
+    // Start
+    loadProjects();
+    setTimeout(() => document.getElementById("page-loader").classList.add("hidden"), 2500);
   </script>
 </body>
 

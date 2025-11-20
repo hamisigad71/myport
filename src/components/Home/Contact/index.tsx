@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import { getImgPath } from "@/utils/image";
 
 const Contactform = () => {
   return (
@@ -46,7 +45,7 @@ const Contactform = () => {
               <p className="text-white/50 pb-4 text-base">Trusted by</p>
               <div className="flex items-center flex-wrap md:gap-14 gap-7">
                 <Image
-                  src={getImgPath("/images/contact/google-pay.png")}
+                  src="/images/contact/google-pay.png"
                   alt="Google-pay"
                   width={100}
                   height={20}
@@ -55,7 +54,7 @@ const Contactform = () => {
                   className="w_f max-w-28 w-full h-5"
                 />
                 <Image
-                  src={getImgPath("/images/contact/play-juction.png")}
+                  src="/images/contact/play-juction.png"
                   alt="play-juction"
                   width={100}
                   height={20}
@@ -64,7 +63,7 @@ const Contactform = () => {
                   className="w_f max-w-24 w-full h-6"
                 />
                 <Image
-                  src={getImgPath("/images/contact/stripe.png")}
+                  src="/images/contact/stripe.png"
                   alt="stripe"
                   width={100}
                   height={20}
@@ -73,7 +72,7 @@ const Contactform = () => {
                   className="w_f max-w-14 w-full h-6"
                 />
                 <Image
-                  src={getImgPath("/images/contact/wise.png")}
+                  src="/images/contact/wise.png"
                   alt="wise"
                   width={100}
                   height={20}

@@ -1,5 +1,3 @@
-import { getImgPath } from "@/utils/image";
-
 export const menuItems = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
@@ -11,17 +9,17 @@ export const menuItems = [
 
 export const count = [
   {
-    icon: getImgPath("/images/counter/star.svg"),
+    icon: "/images/counter/star.svg",
     value: "4.86",
     description: "Out of 5 stars from 3896 reviews on Google platform",
   },
   {
-    icon: getImgPath("/images/counter/admin.svg"),
+    icon: "/images/counter/admin.svg",
     value: "364",
     description: "Client testimonials received in the year 2021",
   },
   {
-    icon: getImgPath("/images/counter/bag.svg"),
+    icon: "/images/counter/bag.svg",
     value: "45M+",
     description: "Revenue generated through new projects & marketing",
   },
@@ -35,19 +33,19 @@ export const Progress = [
 
 export const Servicebox = [
   {
-    icon: getImgPath("/images/services/ux-design-product_1.svg"),
+    icon: "/images/services/ux-design-product_1.svg",
     title: "Front-end development",
     description:
       "I build clean, fast, and responsive web interfaces using modern frameworks like React and advanced UI components. My focus is on performance, accessibility, and delivering smooth user experiences across all devices.",
   },
   {
-    icon: getImgPath("/images/services/perfomance-optimization.svg"),
+    icon: "/images/services/perfomance-optimization.svg",
     title: "AI agent development",
     description:
       "I create intuitive and user-centered interface designs that make products easy to navigate and enjoyable to use. My UI work blends functionality with modern design principles.",
   },
   {
-    icon: getImgPath("/images/services/ux-design-product_2.svg"),
+    icon: "/images/services/ux-design-product_2.svg",
     title: "UX & Products Design",
     description:
       "I specialize in crafting visually appealing digital assets—clean layouts, bold typography, and attention-grabbing visuals that elevate brand identity and create strong first impressions..",
@@ -56,7 +54,7 @@ export const Servicebox = [
 
 export const portfolioinfo = [
   {
-    image: getImgPath("/images/portfolio/cozycasa.png"),
+    image: "/images/portfolio/cozycasa.png",
     alt: "Cozycasa – Home & Lifestyle Brand Identity",
     title: "Cozycasa",
     slug: "cozycasa",
@@ -64,7 +62,7 @@ export const portfolioinfo = [
     Class: "md:mt-0",
   },
   {
-    image: getImgPath("/images/portfolio/mars.png"),
+    image: "/images/portfolio/mars.png",
     alt: "Mars – Space Exploration & Tech Branding",
     title: "Mars",
     slug: "mars",
@@ -72,7 +70,7 @@ export const portfolioinfo = [
     Class: "md:mt-24",
   },
   {
-    image: getImgPath("/images/portfolio/humans.png"),
+    image: "/images/portfolio/humans.png",
     alt: "Everyday Humans – Clean Beauty & Wellness",
     title: "Everyday Humans",
     slug: "everyday-humans",
@@ -80,7 +78,7 @@ export const portfolioinfo = [
     Class: "md:mt-0",
   },
   {
-    image: getImgPath("/images/portfolio/roket-squred.png"),
+    image: "/images/portfolio/roket-squred.png",
     alt: "Rocket Squared – Startup Accelerator",
     title: "Rocket Squared",
     slug: "rocket-squared",
@@ -88,7 +86,7 @@ export const portfolioinfo = [
     Class: "md:mt-24",
   },
   {
-    image: getImgPath("/images/portfolio/panda-logo.png"),
+    image: "/images/portfolio/panda-logo.png",
     alt: "Panda – Playful Mascot & Merch Brand",
     title: "Panda",
     slug: "panda",
@@ -96,7 +94,7 @@ export const portfolioinfo = [
     Class: "md:mt-0",
   },
   {
-    image: getImgPath("/images/portfolio/humans.png"),
+    image: "/images/portfolio/humans.png",
     alt: "Fusion Dynamics – Tech Consulting Rebrand",
     title: "Fusion Dynamics",
     slug: "fusion-dynamics",
@@ -104,7 +102,7 @@ export const portfolioinfo = [
     Class: "md:mt-0",
   },
   {
-    image: getImgPath("/images/portfolio/cozycasa.png"),
+    image: "/images/portfolio/cozycasa.png",
     alt: "Lush Haven – Premium Home Decor",
     title: "Lush Haven",
     slug: "lush-haven",
@@ -112,7 +110,7 @@ export const portfolioinfo = [
     Class: "md:mt-24",
   },
   {
-    image: getImgPath("/images/portfolio/mars.png"),
+    image: "/images/portfolio/mars.png",
     alt: "Stellar Labs – Space-Tech Innovation",
     title: "Stellar Labs",
     slug: "stellar-labs",
@@ -120,7 +118,7 @@ export const portfolioinfo = [
     Class: "md:mt-0",
   },
   {
-    image: getImgPath("/images/portfolio/panda-logo.png"),
+    image: "/images/portfolio/panda-logo.png",
     alt: "Bamboo Collective – Eco-Friendly Brand",
     title: "Bamboo Collective",
     slug: "bamboo-collective",
@@ -128,7 +126,7 @@ export const portfolioinfo = [
     Class: "md:mt-24",
   },
   {
-    image: getImgPath("/images/portfolio/roket-squred.png"),
+    image: "/images/portfolio/roket-squred.png",
     alt: "Launchpad Ventures – VC & Startup Studio",
     title: "Launchpad Ventures",
     slug: "launchpad-ventures",

@@ -32,6 +32,36 @@ export const portfolioCategories: PortfolioCategory[] = [
 
 export const portfolioProjects: PortfolioProject[] = [
   {
+    title: "HealthTrack Pro",
+    description: "AI health monitoring",
+    image:
+      "https://i.pinimg.com/1200x/a3/5c/33/a35c33e8813ed8b6bfe1ec40e9d03ddf.jpg",
+    alt: "Health monitoring UI",
+    tags: ["React Native"],
+    href: caseStudyPath,
+    category: "mobile-apps",
+  },
+  {
+    title: "Law Firm website",
+    description: "Smart productivity app",
+    image:
+      "https://i.pinimg.com/736x/38/ac/ab/38acab4c5d557f6e50d411e145bf1c05.jpg",
+    alt: "Law firm website UI",
+    tags: ["React"],
+    href: caseStudyPath,
+    category: "websites",
+  },
+  {
+    title: "Restaurant Website",
+    description: "Enterprise site with 3D",
+    image:
+      "https://i.pinimg.com/736x/21/fa/77/21fa77e1f868a4c618f9ea80ab796be6.jpg",
+    alt: "Restaurant website UI",
+    tags: ["Next.js", "Framer"],
+    href: caseStudyPath,
+    category: "websites",
+  },
+  {
     title: "Aura Finance Dashboard",
     description:
       "Real-time financial analytics platform for enterprise reporting.",
@@ -53,10 +83,11 @@ export const portfolioProjects: PortfolioProject[] = [
     category: "dashboards",
   },
   {
-    title: "SalesFlow Pro",
-    description: "Predictive CRM dashboard to track pipeline health.",
+    title: "AI agent for Real estate",
+    description:
+      "automatically responds to client inquiries, schedules property viewings",
     image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+      "https://i.pinimg.com/736x/53/96/5d/53965d3866ac2ba4a22f1eba65e8b1f9.jpg",
     alt: "CRM dashboard mock",
     tags: ["Next.js", "Chart.js"],
     href: caseStudyPath,
@@ -73,15 +104,6 @@ export const portfolioProjects: PortfolioProject[] = [
     category: "mobile-apps",
   },
   {
-    title: "HealthTrack Pro",
-    description: "AI-assisted health monitoring mobile platform.",
-    image: "https://i.pinimg.com/1200x/a3/5c/33/a35c33e8813ed8b6bfe1ec40e9d03ddf.jpg",
-    alt: "Health monitoring UI",
-    tags: ["React Native"],
-    href: caseStudyPath,
-    category: "mobile-apps",
-  },
-  {
     title: "TaskFlow",
     description: "Productivity assistant with smart reminders.",
     image:
@@ -92,10 +114,11 @@ export const portfolioProjects: PortfolioProject[] = [
     category: "mobile-apps",
   },
   {
-    title: "Nexus Corporate",
-    description: "High-impact enterprise marketing site with 3D.",
+    title: "Hotel Ai Agent",
+    description:
+      "automated virtual assistant that instantly handles guest inquiries, bookings, and support across platforms to improve customer experience.",
     image:
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80",
+      "https://i.pinimg.com/736x/74/12/3c/74123c70e165451107cafc0450f8ae8e.jpg",
     alt: "Enterprise landing page",
     tags: ["Next.js", "Framer"],
     href: caseStudyPath,
@@ -152,4 +175,3 @@ export const portfolioProjects: PortfolioProject[] = [
     category: "ai-agents",
   },
 ];
-

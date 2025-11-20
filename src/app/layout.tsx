@@ -1,5 +1,5 @@
 import React from "react";
-import { Inter } from "next/font/google";
+// Using BlinkMacSystemFont - no Google Font import needed
 import "./globals.css";
 import Header from "@/components/Layout/Header";
 import Footer from "@/components/Layout/Footer";
@@ -14,21 +14,7 @@ import PreLoader from "@/components/Common/PreLoader";
 import ErrorBoundary from "@/components/Common/ErrorBoundary";
 import ClientProviders from "@/components/Common/ClientProviders";
 
-// Configure Inter font with fallbacks and error handling
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-  fallback: [
-    "system-ui",
-    "-apple-system",
-    "BlinkMacSystemFont",
-    "Segoe UI",
-    "Roboto",
-    "sans-serif",
-  ],
-  adjustFontFallback: false,
-  preload: true,
-});
+// BlinkMacSystemFont configuration - handled via CSS
 
 export default function RootLayout({
   children,
@@ -38,12 +24,26 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Google Fonts with fallback handling */}
+        {/* Google Fonts - Figtree and Quicksand */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin=""
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Quicksand:wght@300..700&display=swap"
+          rel="stylesheet"
+        />
         <link
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
           rel="stylesheet"
         />
         <noscript>
+          <link
+            href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Quicksand:wght@300..700&display=swap"
+            rel="stylesheet"
+          />
           <link
             href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
             rel="stylesheet"
@@ -83,7 +83,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={inter.className}>
+      <body className="font-sans" suppressHydrationWarning>
         <ErrorBoundary>
           <ClientProviders>
             <LoadingProvider>

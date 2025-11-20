@@ -13,12 +13,13 @@ const Portfolio = () => {
     useState<PortfolioCategorySlug>("all");
 
   const filteredProjects = useMemo(() => {
-    if (activeCategory === "all") {
-      return portfolioProjects;
-    }
-    return portfolioProjects.filter(
-      (project) => project.category === activeCategory
-    );
+    const matching =
+      activeCategory === "all"
+        ? portfolioProjects
+        : portfolioProjects.filter(
+            (project) => project.category === activeCategory
+          );
+    return matching.slice(0, 6);
   }, [activeCategory]);
 
   return (
@@ -59,7 +60,7 @@ const Portfolio = () => {
           ))}
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
           {filteredProjects.map((project) => (
             <article
               key={project.title}

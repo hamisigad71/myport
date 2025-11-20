@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { Progress as ProgressData } from "@/app/api/data"; // Assuming Progress is correctly imported
-import { getImgPath } from "@/utils/image";
 
 // Define the interface for ProgressItem
 interface ProgressItem {
@@ -30,7 +29,7 @@ const Progresswork = ({ isColorMode }: { isColorMode: Boolean }) => {
         <div className="grid md:grid-cols-12 items-center gap-7">
           <div className="md:col-span-6">
             <Image
-              src={getImgPath("/images/work-progress/progress-work.png")}
+              src="/images/work-progress/progress-work.png"
               alt="logo"
               width={375}
               height={0}

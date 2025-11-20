@@ -1,7 +1,6 @@
 import React, { FC } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { getImgPath } from "@/utils/image";
 
 const Footer: FC = () => {
   return (
@@ -15,9 +14,7 @@ const Footer: FC = () => {
                 className="md:block flex justify-center lg:justify-start"
               >
                 <Image
-                  src={getImgPath(
-                    "/images/logo/Screenshot_from_2025-11-17_00-56-19-removebg-preview.png"
-                  )}
+                  src="/images/logo/Screenshot_from_2025-11-17_00-56-19-removebg-preview.png"
                   alt="logo"
                   width={160}
                   height={50}

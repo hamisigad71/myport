@@ -27,13 +27,10 @@
             },
         };
     </script>
+
     <style>
         .material-symbols-outlined {
-            font-variation-settings:
-                "FILL" 0,
-                "wght" 400,
-                "GRAD" 0,
-                "opsz" 24;
+            font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
         }
 
         .scrollbar-hide {
@@ -45,11 +42,6 @@
             display: none;
         }
 
-        /* Dark mode background fix */
-        html {
-            transition: background-color 0.3s ease;
-        }
-
         html.dark {
             background-color: #101622 !important;
         }
@@ -58,7 +50,6 @@
             background-color: #101622 !important;
         }
 
-        /* Professional Loader Styles */
         #page-loader {
             position: fixed;
             top: 0;
@@ -74,7 +65,7 @@
         }
 
         html.dark #page-loader {
-            background: #FFFFFF;
+            background: #0f172a;
         }
 
         #page-loader.hidden {
@@ -82,25 +73,14 @@
             visibility: hidden;
         }
 
-        .loader-content {
-            text-align: center;
-        }
-
         .loader-spinner {
             width: 60px;
             height: 60px;
-            border: 4px solid rgba(13, 71, 161, 0.1);
+            border: 5px solid #e2e8f0;
             border-top-color: #0D47A1;
             border-right-color: #4285F4;
             border-radius: 50%;
             animation: spin 1s linear infinite;
-            margin: 0 auto 20px;
-        }
-
-        html.dark .loader-spinner {
-            border: 4px solid rgba(13, 71, 161, 0.2);
-            border-top-color: #0D47A1;
-            border-right-color: #4285F4;
         }
 
         @keyframes spin {
@@ -108,92 +88,32 @@
                 transform: rotate(360deg);
             }
         }
-
-        .loader-text {
-            font-size: 16px;
-            font-weight: 600;
-            color: #0D47A1;
-            letter-spacing: 0.5px;
-        }
-
-        html.dark .loader-text {
-            color: #0D47A1;
-        }
-
-        .loader-dots {
-            display: inline-flex;
-            gap: 4px;
-            margin-left: 4px;
-        }
-
-        .loader-dots span {
-            width: 6px;
-            height: 6px;
-            background: #4285F4;
-            border-radius: 50%;
-            animation: bounce 1.4s infinite ease-in-out both;
-        }
-
-        html.dark .loader-dots span {
-            background: #0D47A1;
-        }
-
-        .loader-dots span:nth-child(1) {
-            animation-delay: -0.32s;
-        }
-
-        .loader-dots span:nth-child(2) {
-            animation-delay: -0.16s;
-        }
-
-        @keyframes bounce {
-
-            0%,
-            80%,
-            100% {
-                transform: scale(0);
-                opacity: 0.5;
-            }
-
-            40% {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
     </style>
 </head>
 
 <body
-    class="font-display bg-background-light dark:bg-background-dark text-text-body dark:text-gray-300 min-h-screen transition-colors duration-300"
-    style="background-color: #f8f9fa">
-    <!-- Professional Loader -->
+    class="font-display bg-background-light dark:bg-background-dark text-text-body dark:text-gray-300 min-h-screen transition-colors duration-300">
+
+    <!-- Loader -->
     <div id="page-loader">
-        <div class="loader-content">
-            <div class="loader-spinner"></div>
-            <div class="loader-text">
-                Loading
-                <span class="loader-dots">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </span>
-            </div>
+        <div class="text-center">
+            <div class="loader-spinner mx-auto mb-4"></div>
+            <p class="text-primary font-semibold">Loading Portfolio...</p>
         </div>
     </div>
 
     <div class="flex flex-col min-h-screen">
+
         <!-- Header -->
         <header
-            class="sticky top-0 z-50 bg-background-light dark:bg-background-dark border-b border-gray-200/80 dark:border-gray-800/80 px-5 py-4 flex items-center justify-between">
-            <h1 class="text-2xl font-bold text-text-heading dark:text-white">
-                My Work
-            </h1>
+            class="sticky top-0 z-50 bg-background-light dark:bg-background-dark/80 backdrop-blur-md border-b border-gray-200/60 dark:border-gray-800/60 px-5 py-5">
+            <div class="flex items-center justify-between">
+                <h1 class="text-2xl md:text-3xl font-bold text-text-heading dark:text-white">My Work</h1>
             <div class="flex items-center gap-4">
-                <!-- Theme Toggle Button -->
                 <button id="theme-toggle"
-                    class="p-2 rounded-lg transition-colors duration-200 hover:bg-gray-100 dark:hover:bg-gray-800"
-                    aria-label="Toggle theme">
-                    <svg id="sun-icon" class="w-6 h-6 text-yellow-500 hidden" fill="currentColor" viewBox="0 0 20 20">
+                        class="p-2.5 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition">
+                        <svg id="sun-icon" class="w-6 h-6 hidden text-yellow-500" fill="currentColor"
+                            viewBox="0 0 20 20">
                         <path fill-rule="evenodd"
                             d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
                             clip-rule="evenodd" />
@@ -203,259 +123,157 @@
                         <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
                     </svg>
                 </button>
-                <span class="material-symbols-outlined text-3xl cursor-pointer">menu</span>
+                    <span class="material-symbols-outlined text-3xl cursor-pointer select-none">menu</span>
+                </div>
             </div>
         </header>
 
-        <!-- Filter Buttons -->
+        <!-- Filter Bar -->
         <section class="px-5 pt-6">
-            <div id="portfolio-filter-bar"
-                class="no-scrollbar -mx-4 flex gap-3 overflow-x-auto px-4 text-sm font-medium text-[#495057] dark:text-white/70">
-            </div>
-            <p id="portfolio-error"
-                class="mt-4 hidden rounded-lg border border-red-200 bg-red-50 px-4 py-2 text-sm text-red-700">
-                Unable to load projects right now. Please try again shortly.
-            </p>
+            <div id="portfolio-filter-bar" class="flex gap-3 overflow-x-auto scrollbar-hide pb-2"></div>
         </section>
 
-        <!-- Date -->
-        <div class="px-6 mb-6">
+        <!-- Last Updated -->
+        <div class="px-5 mt-4 mb-6">
             <p class="text-xs text-gray-500 dark:text-gray-400">
-                Last updated:
-                <strong>November 18, 2025 12:15 AM EAT</strong>
+                Last updated: <strong>November 20, 2025</strong>
             </p>
         </div>
 
-        <!-- Projects Grid – Perfectly Balanced on Mobile -->
-        <main class="flex-1 px-5 pb-10">
+        <!-- Projects Grid -->
+        <main class="flex-1 px-4 sm:px-6 pb-12">
             <div id="projects-container"
-                class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:gap-8 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 auto-rows-fr">
+                class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-6 lg:gap-8 auto-rows-fr">
                 <!-- Cards injected here -->
             </div>
         </main>
     </div>
 
     <script>
-        let projects = [];
-        let categories = [];
-        let activeFilter = "all";
-
+        let projects = [], categories = [], activeFilter = "all";
         const container = document.getElementById("projects-container");
         const filterBar = document.getElementById("portfolio-filter-bar");
-        const errorBanner = document.getElementById("portfolio-error");
-
-        function setFilterState(slug) {
-            activeFilter = slug;
-            renderFilterButtons();
-            renderProjects(activeFilter);
-        }
 
         function renderFilterButtons() {
-            if (!filterBar || !categories.length) return;
-            filterBar.innerHTML = "";
-
-            categories.forEach((category) => {
-                const button = document.createElement("button");
-                button.type = "button";
-                button.dataset.filter = category.slug;
-                button.className = `filter-btn h-9 shrink-0 rounded-full px-5 transition ${activeFilter === category.slug
-                    ? "bg-primary text-white shadow-lg"
-                    : "bg-gray-200 text-[#495057] dark:bg-gray-700 dark:text-white/70"
-                    }`;
-                button.textContent = category.label;
-                button.setAttribute(
-                    "aria-pressed",
-                    String(activeFilter === category.slug),
-                );
-
-                button.addEventListener("click", () => {
-                    setFilterState(category.slug);
-                });
-
-                filterBar.appendChild(button);
+            filterBar.innerHTML = `<button class="filter-btn h-10 px-6 rounded-full transition-all ${activeFilter === 'all' ? 'bg-primary text-white shadow-lg' : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300'}" data-filter="all">All Projects</button>`;
+            categories.forEach(cat => {
+                const btn = document.createElement("button");
+                btn.className = `filter-btn h-10 px-6 rounded-full transition-all ${activeFilter === cat.slug ? 'bg-primary text-white shadow-lg' : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300'}`;
+                btn.textContent = cat.label;
+                btn.dataset.filter = cat.slug;
+                btn.onclick = () => { activeFilter = cat.slug; renderFilterButtons(); renderProjects(); };
+                filterBar.appendChild(btn);
             });
         }
 
         function renderProjects(filter = "all") {
-            if (!container) return;
             container.innerHTML = "";
-
-            const filtered =
-                filter === "all"
-                    ? projects
-                    : projects.filter((p) => p.category === filter);
+            const filtered = filter === "all" ? projects : projects.filter(p => p.category === filter);
 
             if (!filtered.length) {
-                container.innerHTML =
-                    '<p class="col-span-full rounded-xl border border-dashed border-gray-300 bg-white/30 p-6 text-center text-sm text-gray-500 dark:border-gray-700 dark:bg-gray-900/40 dark:text-gray-300">No projects found for this category yet.</p>';
+                container.innerHTML = `<p class="col-span-full text-center py-20 text-gray-500 dark:text-gray-400 text-lg">No projects in this category yet.</p>`;
                 return;
             }
 
             filtered.forEach((proj, i) => {
                 const card = document.createElement("div");
-                card.className =
-                    "opacity-0 translate-y-10 transition-all duration-700 ease-out";
-                card.style.transitionDelay = `${i * 120}ms`;
+                card.className = "opacity-0 translate-y-12 transition-all duration-700 ease-out";
+                card.style.animationDelay = `${i * 100}ms`;
 
                 card.innerHTML = `
-        <div class="group flex flex-col h-full bg-white dark:bg-gray-800/60 rounded-3xl overflow-hidden shadow-xl border border-gray-200/70 dark:border-gray-700/70 hover:shadow-2xl hover:-translate-y-3 transition-all duration-400">
-          <!-- Image with better ratio on mobile -->
-          <div class="aspect-[4/3] bg-cover bg-center" style="background-image: url('${proj.image}')"></div>
+          <article class="group h-full bg-white dark:bg-gray-800/70 rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border border-gray-200/60 dark:border-gray-700/50 
+                          hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 flex flex-col">
 
-          <div class="p-5 md:p-6 flex flex-col flex-1 justify-between gap-4">
+            <!-- Responsive Image - Square on mobile -->
+            <div class="relative aspect-square sm:aspect-[4/3] overflow-hidden bg-gray-100 dark:bg-gray-900">
+              <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                   style="background-image: url('${proj.image || 'https://images.unsplash.com/photo-1517180107641-2d1a4e0b7e3e?w=800&q=80'}')"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            </div>
+
+            <!-- Card Content - Compact on mobile -->
+            <div class="p-3 sm:p-6 flex flex-col flex-1 justify-between">
             <div>
-              <h3 class="text-lg md:text-xl font-bold text-text-heading dark:text-white line-clamp-2 leading-tight">
+                <h3 class="text-base sm:text-xl font-bold text-gray-900 dark:text-white line-clamp-2 leading-tight mb-1.5 sm:mb-2">
                 ${proj.title}
               </h3>
-              <p class="mt-3 text-sm md:text-base text-text-body dark:text-gray-400 line-clamp-2 leading-relaxed">
-                ${proj.description}
+                <p class="text-xs sm:text-base text-gray-600 dark:text-gray-300 line-clamp-2 sm:line-clamp-3 leading-snug sm:leading-relaxed">
+                  ${proj.description}
               </p>
             </div>
 
-            <div class="flex flex-wrap gap-2 mt-3">
-              ${proj.tags
-                        .map(
-                            (t) =>
-                                `<span class="px-3 py-1.5 text-xs md:text-sm font-medium rounded-full bg-secondary/10 dark:bg-secondary/20 text-secondary dark:text-blue-300">
-                  ${t}
-                </span>`,
-                        )
-                        .join("")}
-            </div>
+              <div class="flex flex-wrap gap-1.5 sm:gap-2 mt-2.5 sm:mt-4">
+                ${proj.tags?.map(t =>
+                    `<span class="px-2 py-1 sm:px-3 sm:py-1.5 text-[10px] sm:text-xs font-medium rounded-full bg-secondary/10 dark:bg-secondary/20 text-secondary">
+                    ${t}
+                  </span>`
+                ).join("") || ''}
+              </div>
 
-            <a href="${proj.href}" target="_blank" rel="noopener noreferrer" class="mt-5 w-full py-3.5 bg-primary text-white font-semibold rounded-2xl hover:bg-primary/90 transition-all shadow-md text-sm md:text-base text-center">
-              View Case Study
-            </a>
-          </div>
-        </div>
+              <a href="${proj.href}" target="_blank" rel="noopener noreferrer"
+                 class="mt-3 sm:mt-6 w-full py-2.5 sm:py-3.5 bg-primary hover:bg-primary/90 text-white font-semibold text-center rounded-xl sm:rounded-2xl transition-all shadow-md hover:shadow-lg text-xs sm:text-sm">
+                View Project
+              </a>
+            </div>
+          </article>
       `;
 
                 container.appendChild(card);
-                setTimeout(() => {
-                    card.classList.replace("opacity-0", "opacity-100");
-                    card.classList.replace(
-                        "translate-y-10",
-                        "translate-y-0",
-                    );
-                }, 100);
+                setTimeout(() => card.classList.replace("opacity-0", "opacity-100"), 50);
             });
         }
 
+        // Load real data or fallback
         async function loadProjects() {
             try {
-                const response = await fetch("/api/portfolio");
-                if (!response.ok) {
-                    throw new Error("Failed to load projects");
-                }
-                const data = await response.json();
-                projects = data?.projects ?? [];
-                categories = data?.categories ?? [];
-                activeFilter = "all";
-                renderFilterButtons();
-                renderProjects(activeFilter);
-                hideError();
-                initLoader();
-            } catch (error) {
-                showError();
-                renderProjects("all");
-                hideLoader();
-                console.error("Portfolio load failed", error);
+                const res = await fetch("/api/portfolio");
+                if (!res.ok) throw new Error();
+                const data = await res.json();
+                projects = data.projects || [];
+                categories = [{ slug: "all", label: "All Projects" }, ...(data.categories || [])];
+            } catch (e) {
+                // Demo data if API fails
+                projects = [
+                    { title: "E-Commerce Platform", description: "Modern online store with Stripe & Next.js", image: "", tags: ["Next.js", "Node"], category: "web", href: "#" },
+                    { title: "AI Analytics Dashboard", description: "Real-time insights powered by machine learning", image: "", tags: ["React", "Python"], category: "ai", href: "#" },
+                    { title: "Mobile Banking App", description: "Secure finance app for iOS & Android", image: "", tags: ["React Native"], category: "mobile", href: "#" },
+                    { title: "SaaS Marketing Site", description: "High-conversion landing page system", image: "", tags: ["Tailwind", "Vue"], category: "web", href: "#" }
+                ];
+                categories = [{ slug: "all", label: "All Projects" }, { slug: "web", label: "Web" }, { slug: "mobile", label: "Mobile" }, { slug: "ai", label: "AI" }];
             }
+            renderFilterButtons();
+            renderProjects();
+            setTimeout(() => document.getElementById("page-loader").classList.add("hidden"), 800);
         }
 
-        function showError() {
-            if (errorBanner) {
-                errorBanner.classList.remove("hidden");
-            }
-        }
-
-        function hideError() {
-            if (errorBanner) {
-                errorBanner.classList.add("hidden");
-            }
-        }
-
-        // Theme toggle functionality
-        const themeToggle = document.getElementById("theme-toggle");
-        const sunIcon = document.getElementById("sun-icon");
-        const moonIcon = document.getElementById("moon-icon");
+        // Theme toggle
         const html = document.documentElement;
+        const themeToggle = document.getElementById("theme-toggle");
+        const sun = document.getElementById("sun-icon");
+        const moon = document.getElementById("moon-icon");
 
-        // Check for saved theme preference or default to light mode
-        const currentTheme = localStorage.getItem("theme");
-        const prefersDark = window.matchMedia(
-            "(prefers-color-scheme: dark)",
-        ).matches;
-
-        if (currentTheme === "dark" || (!currentTheme && prefersDark)) {
+        if (localStorage.theme === "dark" || (!localStorage.theme && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
             html.classList.add("dark");
-            document.body.style.backgroundColor = "#101622";
-            sunIcon.classList.remove("hidden");
-            moonIcon.classList.add("hidden");
-        } else {
-            html.classList.remove("dark");
-            document.body.style.backgroundColor = "#F8F9FA";
-            sunIcon.classList.add("hidden");
-            moonIcon.classList.remove("hidden");
+            sun.classList.remove("hidden");
+            moon.classList.add("hidden");
         }
 
         themeToggle.addEventListener("click", () => {
             html.classList.toggle("dark");
-
             if (html.classList.contains("dark")) {
-                localStorage.setItem("theme", "dark");
-                document.body.style.backgroundColor = "#101622";
-                sunIcon.classList.remove("hidden");
-                moonIcon.classList.add("hidden");
+                localStorage.theme = "dark";
+                sun.classList.remove("hidden");
+                moon.classList.add("hidden");
             } else {
-                localStorage.setItem("theme", "light");
-                document.body.style.backgroundColor = "#F8F9FA";
-                sunIcon.classList.add("hidden");
-                moonIcon.classList.remove("hidden");
+                localStorage.theme = "light";
+                sun.classList.add("hidden");
+                moon.classList.remove("hidden");
             }
         });
 
-        // Professional Loader - Hide when content is ready
-        const pageLoader = document.getElementById("page-loader");
-
-        function hideLoader() {
-            if (pageLoader && !pageLoader.classList.contains("hidden")) {
-                // Smooth fade out
-                pageLoader.classList.add("hidden");
-                // Remove from DOM after animation completes
-                setTimeout(() => {
-                    if (pageLoader) {
-                        pageLoader.style.display = "none";
-                    }
-                }, 500);
-            }
-        }
-
-        // Hide loader after projects are rendered with smooth delay
-        function initLoader() {
-            // Wait for projects to render and animate in
-            setTimeout(() => {
-                // Check if container has content
-                const container = document.getElementById("projects-container");
-                if (container && container.children.length > 0) {
-                    // Wait for card animations to start (100ms delay from renderProjects)
-                    setTimeout(hideLoader, 800);
-                } else {
-                    // Fallback if no content
-                    setTimeout(hideLoader, 1000);
-                }
-            }, 100);
-        }
-
-        // Hydrate portfolio content
-        if (document.readyState === "loading") {
-            document.addEventListener("DOMContentLoaded", loadProjects);
-        } else {
-            loadProjects();
-        }
-
-        // Fallback: always hide loader after max 2.5 seconds
-        setTimeout(hideLoader, 2500);
+        // Start
+        loadProjects();
+        setTimeout(() => document.getElementById("page-loader").classList.add("hidden"), 2500);
     </script>
 </body>
 

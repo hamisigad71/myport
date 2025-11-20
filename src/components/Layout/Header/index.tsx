@@ -106,13 +106,13 @@ const Header: React.FC = () => {
             <div className="hidden lg:flex items-center gap-3">
               <button
                 onClick={() => setIsSignInOpen(true)}
-                className="px-6 py-2.5 text-sm font-medium border border-gray-300 dark:border-gray-700 rounded-full hover:bg-gray-50 dark:hover:bg-gray-800 transition-all"
+                className="btn-text-secondary px-6 py-2.5 border border-gray-300 dark:border-gray-700 rounded-full hover:bg-gray-50 dark:hover:bg-gray-800 transition-all"
               >
                 Sign In
               </button>
               <button
                 onClick={() => setIsSignUpOpen(true)}
-                className="px-6 py-2.5 text-sm font-semibold bg-blue-600 text-white rounded-full hover:bg-blue-700 shadow-md transition-all"
+                className="btn-text-primary px-6 py-2.5 bg-blue-600 text-white rounded-full hover:bg-blue-700 shadow-md transition-all"
               >
                 Sign Up
               </button>
@@ -145,7 +145,7 @@ const Header: React.FC = () => {
         }`}
       >
         <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-800">
-          <h2 className="text-2xl font-bold">Menu</h2>
+          <h2 className="text-heading-3">Menu</h2>
           <button
             onClick={() => setNavbarOpen(false)}
             className="p-3 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-all"
@@ -169,7 +169,7 @@ const Header: React.FC = () => {
                 setIsSignInOpen(true);
                 setNavbarOpen(false);
               }}
-              className="w-full py-4 text-lg font-medium text-left hover:text-blue-600 transition-colors"
+              className="nav-text-mobile w-full py-4 text-left hover:text-blue-600 transition-colors"
             >
               Sign In
             </button>
@@ -178,7 +178,7 @@ const Header: React.FC = () => {
                 setIsSignUpOpen(true);
                 setNavbarOpen(false);
               }}
-              className="w-full py-4 bg-blue-600 text-white text-lg font-semibold rounded-2xl hover:bg-blue-700 shadow-lg transition-all"
+              className="btn-text-primary w-full py-4 bg-blue-600 text-white rounded-2xl hover:bg-blue-700 shadow-lg transition-all"
             >
               Sign Up
             </button>

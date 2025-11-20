@@ -1,5 +1,4 @@
 "use client";
-import { getImgPath } from "@/utils/image";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -17,35 +16,33 @@ const Hero = () => {
           >
             <div className="flex gap-2 items-center pt-10">
               <span className="w-3 h-3 rounded-full bg-success"></span>
-              <span className="font-medium text-midnight_text text-sm lg:text-base dark:text-white/50">
+              <span className="text-overline text-midnight_text dark:text-white/60">
                 Online 24/7
               </span>
             </div>
 
-            <h1 className="text-midnight_text font-bold dark:text-white text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl lg:leading-tight xl:leading-tight 2xl:leading-tight">
-              Crafting Digital Excellence, One Project at a Time
+            <h1 className="text-midnight_text font-bold dark:text-white text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl lg:leading-tight xl:leading-tight 2xl:leading-tight tracking-tight">
+              Delivering Clean Code, Sharp Design, Real Results
             </h1>
 
-            <p className="text-grey dark:text-white/70 text-base lg:text-lg xl:text-xl 2xl:text-2xl font-normal max-w-lg lg:max-w-md xl:max-w-xl">
+            <p className="text-body-large text-grey dark:text-white/75 max-w-lg lg:max-w-md xl:max-w-xl">
               I'm Daysman Gad, a developer who blends AI, code, and digital
               strategy to create smart, scalable solutions for business.
             </p>
 
-            <a
-              href="#learn-more"
-              className="py-3 px-8 lg:py-4 lg:px-10 xl:py-4 xl:px-12 2xl:py-5 2xl:px-14 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300 text-base lg:text-lg xl:text-lg 2xl:text-lg font-semibold"
-            >
-              Get Started
-            </a>
+            <div className="w-full flex justify-end lg:justify-start">
+              <a
+                href="#learn-more"
+                className="btn-text-primary py-3 px-8 lg:py-4 lg:px-10 xl:py-4 xl:px-12 2xl:py-5 2xl:px-14 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300"
+              >
+                Get Started
+              </a>
+            </div>
 
             <div className="flex items-center gap-4 lg:gap-5 xl:gap-6 2xl:gap-7 pt-4 lg:pt-6 xl:pt-8 2xl:pt-10">
               <div className="flex items-center">
                 <Image
-                  src={
-                    getImgPath(
-                      "https://i.pinimg.com/736x/a1/3f/e5/a13fe593cd044397afc8ce5d47598333.jpg"
-                    ) || "/placeholder.svg"
-                  }
+                  src="https://i.pinimg.com/736x/a1/3f/e5/a13fe593cd044397afc8ce5d47598333.jpg"
                   alt="hero-image"
                   width={40}
                   height={40}
@@ -53,10 +50,7 @@ const Hero = () => {
                   className="w-10 h-10 lg:w-12 lg:h-12 xl:w-14 xl:h-14 2xl:w-16 2xl:h-16 rounded-full border-2 border-white"
                 />
                 <Image
-                  src={
-                    getImgPath("/images/hero/hero-profile-3.jpg") ||
-                    "/placeholder.svg"
-                  }
+                  src="/images/hero/hero-profile-3.jpg"
                   alt="hero-image"
                   width={40}
                   height={40}
@@ -65,9 +59,9 @@ const Hero = () => {
                 />
               </div>
               <div>
-                <p className="text-sm lg:text-base xl:text-lg 2xl:text-xl font-normal text-grey dark:text-white/70 max-w-xs lg:max-w-sm xl:max-w-md 2xl:max-w-lg">
+                <p className="text-body text-grey dark:text-white/75 max-w-xs lg:max-w-sm xl:max-w-md 2xl:max-w-lg">
                   Need help?{" "}
-                  <Link href="#" className="text-primary hover:text-blue-700">
+                  <Link href="#" className="link-primary">
                     Contact my team
                   </Link>{" "}
                   Tell us about your project
@@ -85,11 +79,7 @@ const Hero = () => {
           >
             <div className="relative w-full max-w-lg lg:max-w-2xl xl:max-w-3xl 2xl:max-w-4xl before:absolute before:content-[''] before:bg-[url('/images/hero/line-leyar.svg')] before:bg-no-repeat before:right-0 before:top-0 before:h-24 lg:before:h-32 xl:before:h-40 2xl:before:h-48 before:w-52 lg:before:w-64 xl:before:w-80 2xl:before:w-96 before:-z-10 before:translate-x-1/4 before:-translate-y-1/2 lg:before:block before:hidden after:absolute after:content-[''] after:bg-[url('/images/hero/round-leyar.svg')] after:bg-no-repeat after:left-0 after:bottom-0 after:h-24 lg:after:h-32 xl:after:h-40 2xl:after:h-48 after:w-24 lg:after:w-32 xl:after:w-40 2xl:after:w-48 after:-z-10 after:-translate-x-1/4 after:translate-y-1/4 lg:after:block after:hidden">
               <Image
-                src={
-                  getImgPath(
-                    "https://i.pinimg.com/736x/5d/19/fa/5d19fa202c73792fc36d12df1aa5ab1a.jpg"
-                  ) || "/placeholder.svg"
-                }
+                src="https://i.pinimg.com/736x/5d/19/fa/5d19fa202c73792fc36d12df1aa5ab1a.jpg"
                 alt="hero-image"
                 width={600}
                 height={450}

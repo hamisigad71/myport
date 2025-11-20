@@ -1,5 +1,4 @@
 "use client";
-import { getImgPath } from "@/utils/image";
 import Image from "next/image";
 import Link from "next/link";
 import { usePageLoader } from "@/hooks/usePageLoader";
@@ -20,9 +19,7 @@ const Logo: React.FC = () => {
     <Link href="/" className="inline-block" onClick={handleClick}>
       {/* Light mode */}
       <Image
-        src={getImgPath(
-          "/images/logo/Screenshot_from_2025-11-17_00-56-19-removebg-preview.png",
-        )}
+        src="/images/logo/Screenshot_from_2025-11-17_00-56-19-removebg-preview.png"
         alt="Company Logo"
         width={220}
         height={72}
@@ -40,9 +37,7 @@ const Logo: React.FC = () => {
 
       {/* Dark mode */}
       <Image
-        src={getImgPath(
-          "/images/logo/Screenshot_from_2025-11-18_15-25-35-removebg-preview.png",
-        )}
+        src="/images/logo/Screenshot_from_2025-11-18_15-25-35-removebg-preview.png"
         alt="Company Logo"
         width={220}
         height={72}

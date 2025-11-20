@@ -2,6 +2,130 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Enhanced Typography System - Figtree & Quicksand Modern Design */
+@layer base {
+    html {
+        font-feature-settings: normal;
+        font-variant-ligatures: common-ligatures;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+    }
+
+    body {
+        font-family:
+            "Figtree",
+            -apple-system,
+            "BlinkMacSystemFont",
+            "Segoe UI",
+            "Roboto",
+            system-ui,
+            sans-serif;
+        font-weight: 400; /* Figtree normal weight */
+        line-height: 1.6;
+        letter-spacing: 0.01em; /* Optimized for Figtree */
+    }
+
+    /* Typography Hierarchy - Modern approach with Figtree & Quicksand */
+    h1 {
+        @apply font-bold tracking-tight;
+        font-family:
+            "Quicksand",
+            "Figtree",
+            -apple-system,
+            sans-serif;
+        font-weight: 700; /* Quicksand bold for main headings */
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+    }
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-semibold;
+        font-family:
+            "Quicksand",
+            "Figtree",
+            -apple-system,
+            sans-serif;
+        font-weight: 600; /* Quicksand semibold for secondary headings */
+        line-height: 1.3;
+        letter-spacing: -0.01em;
+    }
+
+    p,
+    span,
+    div {
+        font-family:
+            "Figtree",
+            -apple-system,
+            sans-serif;
+        font-weight: 400; /* Figtree 400 for optimal readability */
+        line-height: 1.6;
+        letter-spacing: 0.01em; /* Optimized for Figtree */
+    }
+
+    /* Button and UI element typography - Quicksand for interactive elements */
+    button {
+        font-family:
+            "Quicksand",
+            "Figtree",
+            -apple-system,
+            sans-serif;
+        font-weight: 500; /* Medium weight maintains readability */
+        letter-spacing: 0.015em;
+    }
+
+    /* Link typography - Figtree for subtle emphasis */
+    a {
+        font-family:
+            "Figtree",
+            -apple-system,
+            sans-serif;
+        font-weight: 500;
+        transition: all 0.2s ease;
+        letter-spacing: 0.01em;
+    }
+
+    /* Navigation and menu items - Quicksand for clean navigation */
+    nav a,
+    .nav-link {
+        font-family:
+            "Quicksand",
+            "Figtree",
+            -apple-system,
+            sans-serif;
+        font-weight: 500;
+        letter-spacing: 0.02em;
+    }
+
+    /* Form elements - Figtree for clean forms */
+    input,
+    textarea,
+    select {
+        font-family:
+            "Figtree",
+            -apple-system,
+            sans-serif;
+        font-weight: 400;
+        letter-spacing: 0.01em;
+    }
+
+    /* Small text and captions - Figtree for readability */
+    small,
+    .text-sm,
+    .text-xs {
+        font-family:
+            "Figtree",
+            -apple-system,
+            sans-serif;
+        font-weight: 400;
+        letter-spacing: 0.015em;
+    }
+}
+
 @theme {
     --spacing-6xl: 75rem;
     --container-screen-2xl: 83.75rem;
@@ -95,6 +219,67 @@ body {
     }
 }
 
+/* Figtree & Quicksand-Optimized Typography Utilities */
+@layer utilities {
+    .text-light {
+        font-weight: 300;
+    }
+    .text-normal {
+        font-weight: 400;
+    }
+    .text-medium {
+        font-weight: 500;
+    }
+    .text-semibold {
+        font-weight: 600;
+    }
+    .text-bold {
+        font-weight: 700;
+    }
+
+    /* Figtree-specific text styles */
+    .text-ui {
+        font-family:
+            "Quicksand",
+            "Figtree",
+            -apple-system,
+            sans-serif;
+        font-weight: 500;
+        letter-spacing: 0.02em;
+    }
+
+    .text-body {
+        font-family:
+            "Figtree",
+            -apple-system,
+            sans-serif;
+        font-weight: 400;
+        letter-spacing: 0.01em;
+        line-height: 1.6;
+    }
+
+    .text-display {
+        font-family:
+            "Quicksand",
+            "Figtree",
+            -apple-system,
+            sans-serif;
+        font-weight: 600;
+        letter-spacing: -0.015em;
+        line-height: 1.2;
+    }
+
+    .text-caption {
+        font-family:
+            "Figtree",
+            -apple-system,
+            sans-serif;
+        font-weight: 400;
+        letter-spacing: 0.02em;
+        opacity: 0.75;
+    }
+}
+
 .margin_top {
     @apply md:mt-6.25 mt-0;
 }
@@ -120,7 +305,7 @@ body {
 }
 
 .blog-details strong {
-    @apply font-bold dark:text-white;
+    @apply font-semibold dark:text-white;
 }
 
 .blog-details ul {
@@ -133,14 +318,17 @@ body {
 
 .blog-details h1 {
     @apply mb-8 text-3xl font-bold text-midnight_text dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.28];
+    letter-spacing: -0.02em;
 }
 
 .blog-details h2 {
-    @apply mb-8 text-2xl font-bold text-midnight_text dark:text-white sm:text-3xl md:text-[35px] md:leading-[1.28];
+    @apply mb-8 text-2xl font-semibold text-midnight_text dark:text-white sm:text-3xl md:text-[35px] md:leading-[1.28];
+    letter-spacing: -0.015em;
 }
 
 .blog-details h3 {
-    @apply mb-6 text-2xl font-bold dark:text-white sm:text-[28px] sm:leading-[40px];
+    @apply mb-6 text-2xl font-semibold dark:text-white sm:text-[28px] sm:leading-[40px];
+    letter-spacing: -0.01em;
 }
 
 /* Font Fallbacks and Material Icons Support */
@@ -304,6 +492,473 @@ body {
 .dark .network-notification {
     background: rgba(31, 41, 55, 0.95);
     border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Figtree & Quicksand Typography Utility Classes - Modern & Elegant */
+.text-hero {
+    @apply font-bold text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl leading-tight;
+    font-family:
+        "Quicksand",
+        "Figtree",
+        -apple-system,
+        sans-serif;
+    letter-spacing: -0.02em;
+}
+
+.text-heading-1 {
+    @apply font-bold text-3xl lg:text-4xl xl:text-5xl leading-tight;
+    font-family:
+        "Quicksand",
+        "Figtree",
+        -apple-system,
+        sans-serif;
+    letter-spacing: -0.015em;
+}
+
+.text-heading-2 {
+    @apply font-semibold text-2xl lg:text-3xl xl:text-4xl leading-snug;
+    font-family:
+        "Quicksand",
+        "Figtree",
+        -apple-system,
+        sans-serif;
+    letter-spacing: -0.01em;
+}
+
+.text-heading-3 {
+    @apply font-semibold text-xl lg:text-2xl xl:text-3xl leading-snug;
+    font-family:
+        "Quicksand",
+        "Figtree",
+        -apple-system,
+        sans-serif;
+    letter-spacing: -0.005em;
+}
+
+.text-heading-4 {
+    @apply font-semibold text-lg lg:text-xl xl:text-2xl leading-snug;
+    font-family:
+        "Quicksand",
+        "Figtree",
+        -apple-system,
+        sans-serif;
+    letter-spacing: 0em;
+}
+
+.text-subtitle {
+    @apply font-medium text-base lg:text-lg xl:text-xl leading-relaxed;
+    font-family:
+        "Figtree",
+        -apple-system,
+        sans-serif;
+    letter-spacing: 0.015em;
+}
+
+.text-body-large {
+    @apply font-normal text-base lg:text-lg xl:text-xl leading-relaxed;
+    font-family:
+        "Figtree",
+        -apple-system,
+        sans-serif;
+    letter-spacing: 0.01em;
+}
+
+.text-body {
+    @apply font-normal text-sm lg:text-base leading-relaxed;
+    font-family:
+        "Figtree",
+        -apple-system,
+        sans-serif;
+    letter-spacing: 0.01em;
+}
+
+.text-body-small {
+    @apply font-normal text-xs lg:text-sm leading-relaxed;
+    font-family:
+        "Figtree",
+        -apple-system,
+        sans-serif;
+    letter-spacing: 0.015em;
+}
+
+.text-caption {
+    @apply font-normal text-xs leading-normal opacity-75;
+    font-family:
+        "Figtree",
+        -apple-system,
+        sans-serif;
+    letter-spacing: 0.02em;
+}
+
+.text-overline {
+    @apply font-medium text-xs uppercase leading-normal;
+    font-family:
+        "Quicksand",
+        "Figtree",
+        -apple-system,
+        sans-serif;
+    letter-spacing: 0.15em;
+}
+
+/* Button Typography - Quicksand Optimized */
+.btn-text-primary {
+    @apply font-medium text-sm lg:text-base;
+    font-family:
+        "Quicksand",
+        "Figtree",
+        -apple-system,
+        sans-serif;
+    letter-spacing: 0.02em;
+}
+
+.btn-text-secondary {
+    @apply font-normal text-sm lg:text-base;
+    font-family:
+        "Quicksand",
+        "Figtree",
+        -apple-system,
+        sans-serif;
+    letter-spacing: 0.015em;
+}
+
+/* Navigation Typography - Clean & Modern */
+.nav-text {
+    @apply font-medium text-sm lg:text-base;
+    font-family:
+        "Quicksand",
+        "Figtree",
+        -apple-system,
+        sans-serif;
+    letter-spacing: 0.025em;
+}
+
+.nav-text-mobile {
+    @apply font-normal text-base lg:text-lg;
+    font-family:
+        "Quicksand",
+        "Figtree",
+        -apple-system,
+        sans-serif;
+    letter-spacing: 0.02em;
+}
+
+/* Form Typography - Figtree Clean */
+.form-label {
+    @apply font-medium text-sm;
+    font-family:
+        "Figtree",
+        -apple-system,
+        sans-serif;
+    letter-spacing: 0.015em;
+}
+
+.form-input {
+    @apply font-normal text-sm lg:text-base;
+    font-family:
+        "Figtree",
+        -apple-system,
+        sans-serif;
+    letter-spacing: 0.01em;
+}
+
+.form-helper {
+    @apply font-normal text-xs opacity-70;
+    font-family:
+        "Figtree",
+        -apple-system,
+        sans-serif;
+    letter-spacing: 0.015em;
+}
+
+/* Card Typography - Light & Modern */
+.card-title {
+    @apply font-semibold text-lg lg:text-xl leading-snug;
+    font-family:
+        "Quicksand",
+        "Figtree",
+        -apple-system,
+        sans-serif;
+    letter-spacing: 0;
+}
+
+.card-subtitle {
+    @apply font-medium text-sm lg:text-base opacity-70;
+    font-family:
+        "Figtree",
+        -apple-system,
+        sans-serif;
+    letter-spacing: 0.01em;
+}
+
+.card-text {
+    @apply font-normal text-sm lg:text-base leading-relaxed;
+    font-family:
+        "Figtree",
+        -apple-system,
+        sans-serif;
+    letter-spacing: 0.01em;
+}
+
+/* Special Text Styles - Figtree & Quicksand Enhanced */
+.text-brand {
+    @apply font-semibold text-lg lg:text-xl;
+    font-family:
+        "Quicksand",
+        "Figtree",
+        -apple-system,
+        sans-serif;
+    letter-spacing: 0.01em;
+}
+
+.text-emphasis {
+    @apply font-medium;
+    font-family:
+        "Figtree",
+        -apple-system,
+        sans-serif;
+    letter-spacing: 0.01em;
+}
+
+.text-muted {
+    @apply font-normal opacity-55;
+    font-family:
+        "Figtree",
+        -apple-system,
+        sans-serif;
+}
+
+.text-light-emphasis {
+    @apply font-normal opacity-75;
+    font-family:
+        "Figtree",
+        -apple-system,
+        sans-serif;
+}
+
+/* Link Styles - Subtle & Modern */
+.link-primary {
+    @apply font-medium text-primary hover:text-blue-700 transition-colors;
+    font-family:
+        "Figtree",
+        -apple-system,
+        sans-serif;
+    letter-spacing: 0.01em;
+}
+
+.link-secondary {
+    @apply font-normal text-grey hover:text-midnight_text transition-colors;
+    font-family:
+        "Figtree",
+        -apple-system,
+        sans-serif;
+    letter-spacing: 0.01em;
+}
+
+.link-subtle {
+    @apply font-normal hover:font-medium transition-all;
+    font-family:
+        "Figtree",
+        -apple-system,
+        sans-serif;
+    letter-spacing: 0.01em;
+}
+
+/* List Typography */
+.list-title {
+    @apply font-semibold text-base lg:text-lg;
+    font-family:
+        "Quicksand",
+        "Figtree",
+        -apple-system,
+        sans-serif;
+    letter-spacing: 0.015em;
+}
+
+.list-item {
+    @apply font-normal text-sm lg:text-base;
+    font-family:
+        "Figtree",
+        -apple-system,
+        sans-serif;
+    letter-spacing: 0.01em;
+}
+
+/* Table Typography */
+.table-header {
+    @apply font-semibold text-xs lg:text-sm uppercase;
+    font-family:
+        "Quicksand",
+        "Figtree",
+        -apple-system,
+        sans-serif;
+    letter-spacing: 0.08em;
+}
+
+.table-cell {
+    @apply font-normal text-sm lg:text-base;
+    font-family:
+        "Figtree",
+        -apple-system,
+        sans-serif;
+    letter-spacing: 0.01em;
+}
+
+/* Status Text - Enhanced Readability */
+.text-success {
+    @apply font-medium text-success;
+    font-family:
+        "Figtree",
+        -apple-system,
+        sans-serif;
+    letter-spacing: 0.01em;
+}
+
+.text-warning {
+    @apply font-medium text-yellow-600;
+    font-family:
+        "Figtree",
+        -apple-system,
+        sans-serif;
+    letter-spacing: 0.01em;
+}
+
+.text-error {
+    @apply font-medium text-red-600;
+    font-family:
+        "Figtree",
+        -apple-system,
+        sans-serif;
+    letter-spacing: 0.01em;
+}
+
+.text-info {
+    @apply font-medium text-blue-600;
+    font-family:
+        "Figtree",
+        -apple-system,
+        sans-serif;
+    letter-spacing: 0.01em;
+}
+
+/* Responsive Typography Helpers */
+@media (max-width: 640px) {
+    .text-responsive-large {
+        @apply text-2xl font-semibold;
+    }
+
+    .text-responsive-medium {
+        @apply text-lg font-medium;
+    }
+
+    .text-responsive-small {
+        @apply text-base font-normal;
+    }
+}
+
+@media (min-width: 641px) {
+    .text-responsive-large {
+        @apply text-4xl font-semibold;
+    }
+
+    .text-responsive-medium {
+        @apply text-2xl font-medium;
+    }
+
+    .text-responsive-small {
+        @apply text-lg font-normal;
+    }
+}
+
+/* Font Family Utilities - Easy Access to Figtree & Quicksand */
+.font-figtree {
+    font-family:
+        "Figtree",
+        -apple-system,
+        "BlinkMacSystemFont",
+        "Segoe UI",
+        "Roboto",
+        system-ui,
+        sans-serif !important;
+}
+
+.font-quicksand {
+    font-family:
+        "Quicksand",
+        "Figtree",
+        -apple-system,
+        "BlinkMacSystemFont",
+        system-ui,
+        sans-serif !important;
+}
+
+/* Combined Font Classes for Common Use Cases */
+.font-heading {
+    font-family:
+        "Quicksand",
+        "Figtree",
+        -apple-system,
+        sans-serif !important;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+.font-body {
+    font-family:
+        "Figtree",
+        -apple-system,
+        sans-serif !important;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    line-height: 1.6;
+}
+
+.font-ui {
+    font-family:
+        "Quicksand",
+        "Figtree",
+        -apple-system,
+        sans-serif !important;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+/* Modern Weight Variations */
+.font-elegant-light {
+    font-family:
+        "Figtree",
+        -apple-system,
+        sans-serif !important;
+    font-weight: 300;
+    letter-spacing: 0.015em;
+}
+
+.font-elegant-medium {
+    font-family:
+        "Figtree",
+        -apple-system,
+        sans-serif !important;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+}
+
+.font-elegant-semibold {
+    font-family:
+        "Quicksand",
+        "Figtree",
+        -apple-system,
+        sans-serif !important;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+}
+
+.font-elegant-bold {
+    font-family:
+        "Quicksand",
+        "Figtree",
+        -apple-system,
+        sans-serif !important;
+    font-weight: 700;
+    letter-spacing: -0.015em;
 }
 
 /* Smooth transitions for dismissible elements */

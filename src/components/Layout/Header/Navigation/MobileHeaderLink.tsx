@@ -2,12 +2,14 @@ import { useState } from "react";
 import Link from "next/link";
 import { HeaderItem } from "../../../../types/menu";
 import { usePathname } from "next/navigation";
+import { usePageLoader } from "../../../../hooks/usePageLoader";
 
 const MobileHeaderLink: React.FC<{
   item: HeaderItem;
   onClick?: () => void;
 }> = ({ item, onClick }) => {
   const [submenuOpen, setSubmenuOpen] = useState(false);
+  const { navigateWithLoader } = usePageLoader();
 
   const handleToggle = () => {
     setSubmenuOpen(!submenuOpen);
@@ -18,10 +20,14 @@ const MobileHeaderLink: React.FC<{
   return (
     <Link href={item.href} className="relative block w-full">
       <button
-        onClick={() => {
+        onClick={(e) => {
           if (item.submenu) {
             handleToggle();
           } else {
+            if (path !== item.href) {
+              e.preventDefault();
+              navigateWithLoader(item.href);
+            }
             onClick?.();
           }
         }}
@@ -63,7 +69,13 @@ const MobileHeaderLink: React.FC<{
               key={index}
               href={subItem.href}
               className="block py-2 text-gray-500 hover:bg-gray-200"
-              onClick={onClick}
+              onClick={(e) => {
+                if (path !== subItem.href) {
+                  e.preventDefault();
+                  navigateWithLoader(subItem.href);
+                }
+                onClick?.();
+              }}
             >
               {subItem.label}
             </Link>

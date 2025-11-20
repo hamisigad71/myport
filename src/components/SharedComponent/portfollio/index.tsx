@@ -1,105 +1,25 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import Link from "next/link";
-
-const categories = [
-  "All",
-  "Mobile Apps",
-  "Dashboards",
-  "Websites",
-  "AI Agents",
-];
-
-type Project = {
-  title: string;
-  description: string;
-  image: string;
-  alt: string;
-  tags: string[];
-  href: string;
-  category: (typeof categories)[number];
-};
-
-const caseStudyPath = "/projects/index.html";
-
-const projects: Project[] = [
-  {
-    title: "Aura Finance Dashboard",
-    description:
-      "A comprehensive data analytics platform designed for enterprise clients to visualize financial trends.",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuDmiqNRkzNxkFO0WjJJEadLZ9yCC3v6zejqskpwjvmxzt3bEgEvYHo6FSGq2tWgXh_MMA1YwwmwhqkJiaTnmK6zu6pFgTBPGOhTLpbpSAQy1BZeYpSyqbRR9sOeGuwch2yBnAHuCgz5_ndCBA0Ew85m0KmCN_v65kHAL-UedneqBIQvRTXeKYugZSzgP4PKXYWLO-kQlrhCWpytbN8eGsBfO8yJhXaCTPlqAiri-ISiWLWmPxZzW5YLZIPVre0Lu1RJ9-w43Kp4-AM",
-    alt: "Screenshot of a financial analytics dashboard",
-    tags: ["React", "Python", "D3.js"],
-    href: caseStudyPath,
-    category: "Dashboards",
-  },
-  {
-    title: "ConnectSphere Mobile App",
-    description:
-      "A social networking application for professionals to connect and collaborate on projects.",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuDn4N0wASVSreca7uVqmI9Z94GQfUcQzmdZ8LEmp5Vc_a7wE1jEiaq2p1WNFtokHU1ruI1dtnZ6BJ9_9rJzOUle8F7OknEVzBD2zEthGSuW1PoX_9D2Lqzvvf2Nl_Cnk0OUqBMIS5PhA2xBuKDx0gZagZ7VhWSeeIQTV-TmDmku_xr2K5MAUN5Y9zEUMyS3gIuvqXSvBvCvZnPb-1lX3ChGigv-w7RhZ3YuaAeaUDVzb9LykFecAE_nH-NAYnuO1WM6Ol45hdeDhn8",
-    alt: "UI of a professional social networking mobile app",
-    tags: ["SwiftUI", "Firebase", "Node.js"],
-    href: caseStudyPath,
-    category: "Mobile Apps",
-  },
-  {
-    title: "IntelliAgent Workflow",
-    description:
-      "An autonomous AI agent designed to automate customer support inquiries and ticket routing.",
-    image:
-      "https://i.pinimg.com/1200x/4a/60/a3/4a60a3cbcd2b59cd619193ca6b25cde2.jpg",
-    alt: "Abstract visualization of an AI agent workflow",
-    tags: ["Python", "TensorFlow", "LangChain"],
-    href: caseStudyPath,
-    category: "AI Agents",
-  },
-  {
-    title: "Eclipse Commerce Platform",
-    description:
-      "Headless e-commerce storefront optimized for high-volume brands with personalized merchandising.",
-    image:
-      "https://i.pinimg.com/1200x/a3/5c/33/a35c33e8813ed8b6bfe1ec40e9d03ddf.jpg",
-    alt: "Modern e-commerce dashboard mockup",
-    tags: ["Next.js", "Shopify", "TailwindCSS"],
-    href: caseStudyPath,
-    category: "Websites",
-  },
-  {
-    title: "PulseCare Telemedicine",
-    description:
-      "A HIPAA-compliant telemedicine suite connecting clinicians with patients through secure video consults.",
-    image:
-      "https://i.pinimg.com/736x/49/74/92/4974923484daa921b5b275e22cc90805.jpg",
-    alt: "Telemedicine application interface",
-    tags: ["React Native", "GraphQL", "AWS"],
-    href: caseStudyPath,
-    category: "Mobile Apps",
-  },
-  {
-    title: "Atlas Ops Portal",
-    description:
-      "A mission control experience giving operations teams real-time visibility into logistics pipelines.",
-    image:
-      "https://i.pinimg.com/1200x/b9/58/a2/b958a22119cf8e415e42b275f712c77e.jpg",
-    alt: "Operations analytics UI",
-    tags: ["Vue", "Rust", "PostgreSQL"],
-    href: caseStudyPath,
-    category: "Dashboards",
-  },
-];
+import {
+  portfolioCategories,
+  portfolioProjects,
+  type PortfolioCategorySlug,
+} from "@/data/portfolioProjects";
 
 const Portfolio = () => {
   const [activeCategory, setActiveCategory] =
-    useState<(typeof categories)[number]>("All");
+    useState<PortfolioCategorySlug>("all");
 
-  const filteredProjects =
-    activeCategory === "All"
-      ? projects
-      : projects.filter((project) => project.category === activeCategory);
+  const filteredProjects = useMemo(() => {
+    if (activeCategory === "all") {
+      return portfolioProjects;
+    }
+    return portfolioProjects.filter(
+      (project) => project.category === activeCategory
+    );
+  }, [activeCategory]);
 
   return (
     <section
@@ -122,19 +42,19 @@ const Portfolio = () => {
         </header>
 
         <div className="no-scrollbar -mx-4 flex gap-3 overflow-x-auto px-4">
-          {categories.map((category, index) => (
+          {portfolioCategories.map((category) => (
             <button
-              key={category}
+              key={category.slug}
               className={`h-9 shrink-0 rounded-full px-5 text-sm font-medium transition ${
-                activeCategory === category
+                activeCategory === category.slug
                   ? "bg-primary text-white"
                   : "bg-gray-200 text-[#495057] dark:bg-gray-700 dark:text-white/70"
               }`}
               type="button"
-              onClick={() => setActiveCategory(category)}
-              aria-pressed={activeCategory === category}
+              onClick={() => setActiveCategory(category.slug)}
+              aria-pressed={activeCategory === category.slug}
             >
-              {category}
+              {category.label}
             </button>
           ))}
         </div>

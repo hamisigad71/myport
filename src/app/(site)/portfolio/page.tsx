@@ -8,7 +8,7 @@ const PortfolioPage = () => {
     // Check for saved theme preference or default to light mode
     const savedTheme = localStorage.getItem("theme");
     const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)",
+      "(prefers-color-scheme: dark)"
     ).matches;
 
     if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
@@ -52,10 +52,10 @@ const PortfolioPage = () => {
 
     addStylesheet("https://cdn.tailwindcss.com");
     addStylesheet(
-      "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap",
+      "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
     );
     addStylesheet(
-      "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined",
+      "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
     );
 
     // Configure Tailwind
@@ -120,32 +120,32 @@ const PortfolioPage = () => {
         img: "https://i.pinimg.com/1200x/a3/5c/33/a35c33e8813ed8b6bfe1ec40e9d03ddf.jpg",
       },
       {
-        title: "TaskFlow",
+        title: "Law Firm website ",
         desc: "Smart productivity app",
-        tags: ["Flutter"],
+        tags: ["React"],
         category: "mobile",
-        img: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80",
+        img: "https://i.pinimg.com/736x/38/ac/ab/38acab4c5d557f6e50d411e145bf1c05.jpg",
       },
       {
-        title: "Nexus Corporate",
+        title: "Restaurant Website",
         desc: "Enterprise site with 3D",
         tags: ["Next.js", "Framer"],
         category: "website",
-        img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80",
+        img: "https://i.pinimg.com/736x/cd/cf/49/cdcf49434c0156ce2666c0d21db48271.jpg",
       },
       {
         title: "Studio X",
         desc: "Creative agency portfolio",
         tags: ["Astro", "GSAP"],
         category: "website",
-        img: "https://images.unsplash.com/photo-1547658719-da2bb9504ded?w=800&q=80",
+        img: "https://i.pinimg.com/736x/c2/06/0c/c2060c2609f6e33b5d839086434c771c.jpg",
       },
       {
         title: "EcomPulse",
         desc: "Blazing-fast e-commerce",
         tags: ["Shopify", "Vercel"],
         category: "website",
-        img: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80",
+        img: "https://i.pinimg.com/736x/93/a3/fc/93a3fc5f4fe87125b6579784e9496c06.jpg",
       },
       {
         title: "LearnFlow",
@@ -160,13 +160,6 @@ const PortfolioPage = () => {
         tags: ["N8N", "LangChain"],
         category: "ai",
         img: "https://i.pinimg.com/736x/55/3a/8c/553a8cf3426a3414dd4447bfcaf931cd.jpg",
-      },
-      {
-        title: "CodeBot",
-        desc: "AI pair programmer",
-        tags: ["Node.js", "Claude"],
-        category: "ai",
-        img: "https://images.unsplash.com/photo-1518432031352-d65fc8c30204?w=800&q=80",
       },
       {
         title: "ContentEngine",
@@ -203,7 +196,9 @@ const PortfolioPage = () => {
 
         card.innerHTML = `
           <div class="group flex flex-col h-full bg-white dark:bg-gray-800/60 rounded-3xl overflow-hidden shadow-xl border border-gray-200/70 dark:border-gray-700/70 hover:shadow-2xl hover:-translate-y-3 transition-all duration-400">
-            <div class="aspect-[4/3] bg-cover bg-center" style="background-image: url('${proj.img}')"></div>
+            <div class="aspect-4/3 bg-cover bg-center" style="background-image: url('${
+              proj.img
+            }')"></div>
             <div class="p-5 md:p-6 flex flex-col flex-1 justify-between gap-4">
               <div>
                 <h3 class="text-lg md:text-xl font-bold text-text-heading dark:text-white line-clamp-2 leading-tight">
@@ -219,7 +214,7 @@ const PortfolioPage = () => {
                     (t) =>
                       `<span class="px-3 py-1.5 text-xs md:text-sm font-medium rounded-full bg-secondary/10 dark:bg-secondary/20 text-secondary dark:text-blue-300">
                     ${t}
-                  </span>`,
+                  </span>`
                   )
                   .join("")}
               </div>
@@ -246,11 +241,7 @@ const PortfolioPage = () => {
     <div>
       <style jsx global>{`
         .material-symbols-outlined {
-          font-variation-settings:
-            "FILL" 0,
-            "wght" 400,
-            "GRAD" 0,
-            "opsz" 24;
+          font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
         }
         .scrollbar-hide {
           -ms-overflow-style: none;
@@ -264,9 +255,7 @@ const PortfolioPage = () => {
           background-color: #f8f9fa !important;
           color: #495057;
           min-height: 100vh;
-          transition:
-            background-color 0.3s ease,
-            color 0.3s ease;
+          transition: background-color 0.3s ease, color 0.3s ease;
         }
         html.dark body {
           background-color: #101622 !important;
@@ -352,16 +341,6 @@ const PortfolioPage = () => {
             </span>
           </div>
         </header>
-
-        {/* Date */}
-        <div className="px-6 mb-6">
-          <p
-            className="text-xs"
-            style={{ color: isDark ? "#9ca3af" : "#6b7280" }}
-          >
-            Last updated: <strong>November 18, 2025 12:15 AM EAT</strong>
-          </p>
-        </div>
 
         {/* Projects Grid */}
         <main className="flex-1 px-5 pb-10">

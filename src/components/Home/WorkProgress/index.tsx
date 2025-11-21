@@ -56,8 +56,7 @@ const Progresswork = ({ isColorMode }: { isColorMode: Boolean }) => {
               </span>
             </div>
             <h2 className="pt-9 pb-4 text-midnight_text font-bold dark:text-white items-center justify-center  text-3xl max-w-xl">
-              Helping businesses automate, scale, and stand out with intelligent
-              technology.
+              Turning ideas into polished, high-performance digital products
             </h2>
             <p className="text-gray dark:text-white/70 text-base font-semibold max-w-2xl">
               I build fast, modern web experiences, create smart AI agents that

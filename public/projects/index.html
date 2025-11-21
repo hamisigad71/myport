@@ -1,730 +1,505 @@
 <!doctype html>
 <html class="light dark" lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Portfolio Showcase – Creative Developer</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Quicksand:wght@300..700&display=swap"
-            rel="stylesheet"
-        />
-        <script src="https://cdn.tailwindcss.com"></script>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
-            rel="stylesheet"
-        />
 
-        <script>
-            tailwind.config = {
-                darkMode: "class",
-                theme: {
-                    extend: {
-                        colors: {
-                            primary: "#2F73F2",
-                            secondary: "#547593",
-                            "text-heading": "#102D47",
-                            "text-body": "#495057",
-                            "background-light": "#F8F9FA",
-                            "background-dark": "#081738",
-                            "card-light": "#FFFFFF",
-                            "card-dark": "#000f30",
-                            success: "#3cd278",
-                            border: "#CCD7E1",
-                            "dark-border": "#224767",
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Showcase – Creative Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Quicksand:wght@300..700&display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
+        rel="stylesheet" />
+
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#2F73F2",
+                        secondary: "#547593",
+                        "text-heading": "#102D47",
+                        "text-body": "#495057",
+                        "background-light": "#F8F9FA",
+                        "background-dark": "#081738",
+                        "card-light": "#FFFFFF",
+                        "card-dark": "#000f30",
+                        success: "#3cd278",
+                        border: "#CCD7E1",
+                        "dark-border": "#224767",
+                    },
+                    fontFamily: {
+                        display: ["Quicksand", "Inter", "sans-serif"],
+                        body: ["Figtree", "Inter", "sans-serif"],
+                    },
+                    animation: {
+                        "fade-in": "fadeIn 0.6s ease-out",
+                        "slide-up": "slideUp 0.8s ease-out",
+                        "bounce-gentle": "bounceGentle 2s ease-in-out infinite",
+                        "glow": "glow 2s ease-in-out infinite alternate",
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            "0%": { opacity: "0", transform: "translateY(20px)" },
+                            "100%": { opacity: "1", transform: "translateY(0)" },
                         },
-                        fontFamily: {
-                            display: ["Quicksand", "Inter", "sans-serif"],
-                            body: ["Figtree", "Inter", "sans-serif"],
+                        slideUp: {
+                            "0%": { opacity: "0", transform: "translateY(50px)" },
+                            "100%": { opacity: "1", transform: "translateY(0)" },
                         },
-                        animation: {
-                            "fade-in": "fadeIn 0.6s ease-out",
-                            "slide-up": "slideUp 0.8s ease-out",
-                            "bounce-gentle":
-                                "bounceGentle 2s ease-in-out infinite",
-                            glow: "glow 2s ease-in-out infinite alternate",
+                        bounceGentle: {
+                            "0%, 100%": { transform: "translateY(0)" },
+                            "50%": { transform: "translateY(-10px)" },
                         },
-                        keyframes: {
-                            fadeIn: {
-                                "0%": {
-                                    opacity: "0",
-                                    transform: "translateY(20px)",
-                                },
-                                "100%": {
-                                    opacity: "1",
-                                    transform: "translateY(0)",
-                                },
-                            },
-                            slideUp: {
-                                "0%": {
-                                    opacity: "0",
-                                    transform: "translateY(50px)",
-                                },
-                                "100%": {
-                                    opacity: "1",
-                                    transform: "translateY(0)",
-                                },
-                            },
-                            bounceGentle: {
-                                "0%, 100%": { transform: "translateY(0)" },
-                                "50%": { transform: "translateY(-10px)" },
-                            },
-                            glow: {
-                                "0%": {
-                                    boxShadow:
-                                        "0 0 5px rgba(47, 115, 242, 0.2)",
-                                },
-                                "100%": {
-                                    boxShadow:
-                                        "0 0 20px rgba(47, 115, 242, 0.4)",
-                                },
-                            },
+                        glow: {
+                            "0%": { boxShadow: "0 0 5px rgba(47, 115, 242, 0.2)" },
+                            "100%": { boxShadow: "0 0 20px rgba(47, 115, 242, 0.4)" },
                         },
                     },
                 },
-            };
-        </script>
-        <style>
-            .material-symbols-outlined {
-                font-variation-settings:
-                    "FILL" 0,
-                    "wght" 400,
-                    "GRAD" 0,
-                    "opsz" 24;
+            },
+        };
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+        }
+
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Gradient backgrounds */
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .dark .gradient-bg {
+            background: linear-gradient(135deg, #2F73F2 0%, #1a365d 100%);
+        }
+
+        /* Glass morphism effect */
+        .glass {
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .dark .glass {
+            background: rgba(0, 15, 48, 0.3);
+            border: 1px solid rgba(34, 71, 103, 0.3);
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .dark ::-webkit-scrollbar-track {
+            background: #2a2a2a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            border-radius: 10px;
+        }
+
+        .dark ::-webkit-scrollbar-thumb {
+            background: #555;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a8a8a8;
+        }
+
+        /* Floating particles */
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
             }
 
-            .scrollbar-hide {
-                -ms-overflow-style: none;
-                scrollbar-width: none;
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+            }
+        }
+
+        /* Loading shimmer effect */
+        .shimmer {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -200% 0;
             }
 
-            .scrollbar-hide::-webkit-scrollbar {
-                display: none;
+            100% {
+                background-position: 200% 0;
             }
+        }
 
-            /* Gradient backgrounds */
-            .gradient-bg {
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            }
+        .dark .shimmer {
+            background: linear-gradient(90deg, #374151 25%, #4b5563 50%, #374151 75%);
+            background-size: 200% 100%;
+        }
+    </style>
+</head>
 
-            .dark .gradient-bg {
-                background: linear-gradient(135deg, #2f73f2 0%, #1a365d 100%);
-            }
+<body
+    class="font-body bg-background-light dark:bg-background-dark text-text-body dark:text-gray-300 min-h-screen transition-all duration-500 overflow-x-hidden">
+    <!-- Floating particles -->
+    <div class="fixed inset-0 pointer-events-none z-0">
+        <div class="particle w-2 h-2 bg-primary/20 top-20 left-10 animation-delay-1000"></div>
+        <div class="particle w-3 h-3 bg-success/20 top-40 right-20 animation-delay-2000"></div>
+        <div class="particle w-1 h-1 bg-secondary/30 bottom-32 left-1/4 animation-delay-3000"></div>
+        <div class="particle w-2 h-2 bg-primary/15 top-1/2 right-1/3 animation-delay-4000"></div>
+    </div>
 
-            /* Loader animation */
-            @keyframes spin {
-                0% {
-                    transform: rotate(0deg);
-                }
-                100% {
-                    transform: rotate(360deg);
-                }
-            }
+    <div class="flex flex-col min-h-screen relative z-10">
+        <!-- Enhanced Header with Gradient -->
+        <header class="relative overflow-hidden">
+            <!-- Background gradient -->
+            <div class="absolute inset-0 gradient-bg opacity-90"></div>
 
-            .animate-spin {
-                animation: spin 1s linear infinite;
-            }
-
-            /* Glass morphism effect */
-            .glass {
-                backdrop-filter: blur(16px);
-                -webkit-backdrop-filter: blur(16px);
-                background: rgba(255, 255, 255, 0.1);
-                border: 1px solid rgba(255, 255, 255, 0.2);
-            }
-
-            .dark .glass {
-                background: rgba(0, 15, 48, 0.3);
-                border: 1px solid rgba(34, 71, 103, 0.3);
-            }
-
-            /* Custom scrollbar */
-            ::-webkit-scrollbar {
-                width: 8px;
-            }
-
-            ::-webkit-scrollbar-track {
-                background: #f1f1f1;
-                border-radius: 10px;
-            }
-
-            .dark ::-webkit-scrollbar-track {
-                background: #2a2a2a;
-            }
-
-            ::-webkit-scrollbar-thumb {
-                background: #c1c1c1;
-                border-radius: 10px;
-            }
-
-            .dark ::-webkit-scrollbar-thumb {
-                background: #555;
-            }
-
-            ::-webkit-scrollbar-thumb:hover {
-                background: #a8a8a8;
-            }
-
-            /* Floating particles */
-            .particle {
-                position: absolute;
-                border-radius: 50%;
-                pointer-events: none;
-                animation: float 3s ease-in-out infinite;
-            }
-
-            @keyframes float {
-                0%,
-                100% {
-                    transform: translateY(0px) rotate(0deg);
-                }
-                50% {
-                    transform: translateY(-20px) rotate(180deg);
-                }
-            }
-
-            /* Loading shimmer effect */
-            .shimmer {
-                background: linear-gradient(
-                    90deg,
-                    #f0f0f0 25%,
-                    #e0e0e0 50%,
-                    #f0f0f0 75%
-                );
-                background-size: 200% 100%;
-                animation: shimmer 1.5s infinite;
-            }
-
-            @keyframes shimmer {
-                0% {
-                    background-position: -200% 0;
-                }
-                100% {
-                    background-position: 200% 0;
-                }
-            }
-
-            .dark .shimmer {
-                background: linear-gradient(
-                    90deg,
-                    #374151 25%,
-                    #4b5563 50%,
-                    #374151 75%
-                );
-                background-size: 200% 100%;
-            }
-        </style>
-    </head>
-
-    <body
-        class="font-body bg-background-light dark:bg-background-dark text-text-body dark:text-gray-300 min-h-screen transition-all duration-500 overflow-x-hidden"
-    >
-        <!-- Floating particles -->
-        <div class="fixed inset-0 pointer-events-none z-0">
-            <div
-                class="particle w-2 h-2 bg-primary/20 top-20 left-10 animation-delay-1000"
-            ></div>
-            <div
-                class="particle w-3 h-3 bg-success/20 top-40 right-20 animation-delay-2000"
-            ></div>
-            <div
-                class="particle w-1 h-1 bg-secondary/30 bottom-32 left-1/4 animation-delay-3000"
-            ></div>
-            <div
-                class="particle w-2 h-2 bg-primary/15 top-1/2 right-1/3 animation-delay-4000"
-            ></div>
-        </div>
-
-        <div class="flex flex-col min-h-screen relative z-10">
-            <!-- Professional Header -->
-            <header
-                class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800"
-            >
+            <!-- Glass overlay -->
+            <div class="sticky top-0 z-50 glass border-b border-white/20 dark:border-dark-border/30">
                 <div class="container mx-auto px-6 py-4">
                     <div class="flex items-center justify-between">
                         <!-- Logo/Brand -->
                         <div class="flex items-center space-x-4">
                             <div
-                                class="w-10 h-10 bg-primary dark:bg-primary rounded-xl flex items-center justify-center"
-                            >
-                                <span
-                                    class="material-symbols-outlined text-white text-2xl"
-                                    >code</span
-                                >
+                                class="w-10 h-10 bg-white/20 dark:bg-white/10 rounded-xl flex items-center justify-center">
+                                <span class="material-symbols-outlined text-white text-2xl">code</span>
                             </div>
                             <div>
-                                <h1
-                                    class="text-2xl font-display font-bold text-gray-900 dark:text-white"
-                                >
-                                    Portfolio Showcase
-                                </h1>
-                                <p
-                                    class="text-sm text-gray-600 dark:text-gray-400"
-                                >
-                                    Creative Developer
-                                </p>
+                                <h1 class="text-2xl font-display font-bold text-white">Portfolio Showcase</h1>
+                                <p class="text-sm text-white/70">Creative Developer</p>
                             </div>
                         </div>
 
                         <!-- Navigation -->
                         <div class="flex items-center space-x-4">
-                            <!-- Home Button -->
-                            <button
-                                id="home-btn"
-                                class="flex items-center space-x-2 px-6 py-3 bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-900 dark:text-white font-medium rounded-xl transition-all duration-300"
-                            >
-                                <span class="material-symbols-outlined"
-                                    >home</span
-                                >
+                            <!-- Home</div> Button -->
+                            <button id="home-btn"
+                                class="flex items-center space-x-2 px-6 py-3 bg-white/20 hover:bg-white/30 text-white font-medium rounded-xl transition-all duration-300 hover:scale-105 border border-white/20">
+                                <span class="material-symbols-outlined">home</span>
                                 <span class="hidden sm:inline">Home</span>
                             </button>
 
                             <!-- Theme Toggle -->
-                            <button
-                                id="theme-toggle"
-                                class="p-3 bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 rounded-xl transition-all duration-300"
-                                aria-label="Toggle theme"
-                            >
-                                <span
-                                    id="sun-icon"
-                                    class="material-symbols-outlined text-gray-900 dark:text-white hidden"
-                                    >light_mode</span
-                                >
-                                <span
-                                    id="moon-icon"
-                                    class="material-symbols-outlined text-gray-900 dark:text-white"
-                                    >dark_mode</span
-                                >
+                            <button id="theme-toggle"
+                                class="p-3 bg-white/20 hover:bg-white/30 rounded-xl transition-all duration-300 hover:scale-105 border border-white/20"
+                                aria-label="Toggle theme">
+                                <span id="sun-icon"
+                                    class="material-symbols-outlined text-white hidden">light_mode</span>
+                                <span id="moon-icon" class="material-symbols-outlined text-white">dark_mode</span>
                             </button>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Hero Section -->
-                <div class="bg-gray-50 dark:bg-gray-800 px-6 py-20 text-center">
-                    <div class="container mx-auto max-w-4xl">
-                        <div class="animate-fade-in">
-                            <h2
-                                class="text-5xl md:text-6xl font-display font-bold mb-6 leading-tight text-gray-900 dark:text-white"
-                            >
-                                My Creative
-                                <span class="text-primary">Portfolio</span>
-                            </h2>
-                            <p
-                                class="text-xl md:text-2xl mb-12 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed"
-                            >
-                                Explore my latest projects spanning AI
-                                development, modern web applications, and
-                                innovative digital solutions.
-                            </p>
+            <!-- Hero Section -->
+            <div class="relative px-6 py-16 text-center text-white">
+                <div class="container mx-auto max-w-4xl">
+                    <div class="animate-fade-in">
+                        <h2 class="text-5xl md:text-6xl font-display font-bold mb-6 leading-tight">
+                            My Creative
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-500">
+                                Portfolio
+                            </span>
+                        </h2>
+                        <p class="text-xl md:text-2xl mb-8 text-white/80 max-w-2xl mx-auto leading-relaxed">
+                            Explore my latest projects spanning AI development, modern web applications, and innovative
+                            digital solutions.
+                        </p>
 
-                            <!-- Stats -->
-                            <div
-                                class="grid grid-cols-3 gap-8 max-w-lg mx-auto"
-                            >
-                                <div
-                                    class="text-center p-6 bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700"
-                                >
-                                    <div
-                                        class="text-3xl font-bold text-primary mb-2"
-                                    >
-                                        12+
-                                    </div>
-                                    <div
-                                        class="text-sm text-gray-600 dark:text-gray-400"
-                                    >
-                                        Projects
-                                    </div>
-                                </div>
-                                <div
-                                    class="text-center p-6 bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700"
-                                >
-                                    <div
-                                        class="text-3xl font-bold text-primary mb-2"
-                                    >
-                                        4
-                                    </div>
-                                    <div
-                                        class="text-sm text-gray-600 dark:text-gray-400"
-                                    >
-                                        Categories
-                                    </div>
-                                </div>
-                                <div
-                                    class="text-center p-6 bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700"
-                                >
-                                    <div
-                                        class="text-3xl font-bold text-primary mb-2"
-                                    >
-                                        2024
-                                    </div>
-                                    <div
-                                        class="text-sm text-gray-600 dark:text-gray-400"
-                                    >
-                                        Latest
-                                    </div>
-                                </div>
+                        <!-- Stats -->
+                        <div class="grid grid-cols-3 gap-8 max-w-lg mx-auto mb-8">
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-success">13+</div>
+                                <div class="text-sm text-white/70">Projects</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-yellow-400">4</div>
+                                <div class="text-sm text-white/70">Categories</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-orange-400"> 2025</div>
+                                <div class="text-sm text-white/70">Latest</div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </header>
+            </div>
+        </header>
 
-            <!-- Filter Section -->
-            <section
-                class="px-6 py-8 bg-white/50 dark:bg-black/20 backdrop-blur-sm"
-            >
-                <div class="container mx-auto max-w-6xl">
-                    <!-- Last Updated -->
-                    <div class="mb-8 text-center">
-                        <div
-                            class="inline-flex items-center space-x-2 px-4 py-2 bg-success/10 dark:bg-success/20 rounded-full"
-                        >
-                            <span
-                                class="material-symbols-outlined text-success text-sm"
-                                >schedule</span
-                            >
-                            <span class="text-sm font-medium text-success">
-                                Last updated:
-                                <strong
-                                    >November 18, 2024 • 12:15 AM EAT</strong
-                                >
-                            </span>
-                        </div>
-                    </div>
-
-                    <!-- Filter Buttons -->
-                    <div class="flex flex-wrap justify-center gap-3">
-                        <button
-                            class="filter-btn px-6 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105 bg-primary text-white shadow-lg"
-                            data-filter="all"
-                        >
-                            <span class="flex items-center space-x-2">
-                                <span class="material-symbols-outlined text-sm"
-                                    >apps</span
-                                >
-                                <span>All Projects</span>
-                                <span
-                                    class="ml-2 px-2 py-0.5 bg-white/20 rounded-full text-xs"
-                                    >13</span
-                                >
-                            </span>
-                        </button>
-                        <button
-                            class="filter-btn px-6 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105 bg-white dark:bg-gray-800 text-text-heading dark:text-white shadow-md border border-gray-200 dark:border-gray-700"
-                            data-filter="dashboard"
-                        >
-                            <span class="flex items-center space-x-2">
-                                <span class="material-symbols-outlined text-sm"
-                                    >dashboard</span
-                                >
-                                <span>Dashboards</span>
-                                <span
-                                    class="ml-2 px-2 py-0.5 bg-gray-100 dark:bg-gray-700 rounded-full text-xs"
-                                    >3</span
-                                >
-                            </span>
-                        </button>
-                        <button
-                            class="filter-btn px-6 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105 bg-white dark:bg-gray-800 text-text-heading dark:text-white shadow-md border border-gray-200 dark:border-gray-700"
-                            data-filter="mobile"
-                        >
-                            <span class="flex items-center space-x-2">
-                                <span class="material-symbols-outlined text-sm"
-                                    >phone_android</span
-                                >
-                                <span>Mobile Apps</span>
-                                <span
-                                    class="ml-2 px-2 py-0.5 bg-gray-100 dark:bg-gray-700 rounded-full text-xs"
-                                    >3</span
-                                >
-                            </span>
-                        </button>
-                        <button
-                            class="filter-btn px-6 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105 bg-white dark:bg-gray-800 text-text-heading dark:text-white shadow-md border border-gray-200 dark:border-gray-700"
-                            data-filter="website"
-                        >
-                            <span class="flex items-center space-x-2">
-                                <span class="material-symbols-outlined text-sm"
-                                    >web</span
-                                >
-                                <span>Websites</span>
-                                <span
-                                    class="ml-2 px-2 py-0.5 bg-gray-100 dark:bg-gray-700 rounded-full text-xs"
-                                    >4</span
-                                >
-                            </span>
-                        </button>
-                        <button
-                            class="filter-btn px-6 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105 bg-white dark:bg-gray-800 text-text-heading dark:text-white shadow-md border border-gray-200 dark:border-gray-700"
-                            data-filter="ai"
-                        >
-                            <span class="flex items-center space-x-2">
-                                <span class="material-symbols-outlined text-sm"
-                                    >psychology</span
-                                >
-                                <span>AI Agents</span>
-                                <span
-                                    class="ml-2 px-2 py-0.5 bg-gray-100 dark:bg-gray-700 rounded-full text-xs"
-                                    >3</span
-                                >
-                            </span>
-                        </button>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Projects Grid -->
-            <main class="flex-1 px-6 pb-16">
-                <div class="container mx-auto max-w-7xl">
+        <!-- Filter Section -->
+        <section class="px-6 py-8 bg-white/50 dark:bg-black/20 backdrop-blur-sm">
+            <div class="container mx-auto max-w-6xl">
+                <!-- Last Updated -->
+                <div class="mb-8 text-center">
                     <div
-                        id="projects-container"
-                        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 auto-rows-fr"
-                    >
-                        <!-- Loading skeletons -->
-                        <div class="shimmer h-80 rounded-3xl"></div>
-                        <div class="shimmer h-80 rounded-3xl"></div>
-                        <div class="shimmer h-80 rounded-3xl"></div>
-                        <div class="shimmer h-80 rounded-3xl"></div>
+                        class="inline-flex items-center space-x-2 px-4 py-2 bg-success/10 dark:bg-success/20 rounded-full">
+                        <span class="material-symbols-outlined text-success text-sm">schedule</span>
+                        <span class="text-sm font-medium text-success">
+                            Last updated: <strong>November 18, 2025 • 12:15 AM EAT</strong>
+                        </span>
                     </div>
                 </div>
-            </main>
 
-            <!-- Enhanced Footer -->
-            <footer
-                class="bg-text-heading dark:bg-background-dark border-t border-gray-200 dark:border-dark-border"
-            >
-                <div class="container mx-auto max-w-6xl px-6 py-12">
-                    <div class="text-center">
-                        <div
-                            class="flex items-center justify-center space-x-2 mb-4"
+                <!-- Filter Buttons -->
+                <div class="flex flex-wrap justify-center gap-3">
+                    <button
+                        class="filter-btn px-6 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105 bg-primary text-white shadow-lg"
+                        data-filter="all">
+                        <span class="flex items-center space-x-2">
+                            <span class="material-symbols-outlined text-sm">apps</span>
+                            <span>All Projects</span>
+                            <span class="ml-2 px-2 py-0.5 bg-white/20 rounded-full text-xs">13</span>
+                        </span>
+                    </button>
+                    <button
+                        class="filter-btn px-6 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105 bg-white dark:bg-gray-800 text-text-heading dark:text-white shadow-md border border-gray-200 dark:border-gray-700"
+                        data-filter="dashboard">
+                        <span class="flex items-center space-x-2">
+                            <span class="material-symbols-outlined text-sm">dashboard</span>
+                            <span>Dashboards</span>
+                            <span class="ml-2 px-2 py-0.5 bg-gray-100 dark:bg-gray-700 rounded-full text-xs">3</span>
+                        </span>
+                    </button>
+                    <button
+                        class="filter-btn px-6 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105 bg-white dark:bg-gray-800 text-text-heading dark:text-white shadow-md border border-gray-200 dark:border-gray-700"
+                        </span>
+                        data-filter="mobile"
                         >
-                            <span
-                                class="material-symbols-outlined text-primary text-2xl"
-                                >code</span
-                            >
-                            <span
-                                class="text-xl font-display font-bold text-white"
-                                >Portfolio Showcase</span
-                            >
-                        </div>
-                        <p class="text-gray-400 mb-6">
-                            Crafted with passion and modern technology
-                        </p>
-
-                        <!-- Social Links -->
-                        <div class="flex justify-center space-x-6 mb-6">
-                            <a
-                                href="#"
-                                class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center hover:bg-white/20 transition-all duration-300 hover:scale-110"
-                            >
-                                <span
-                                    class="material-symbols-outlined text-white"
-                                    >link</span
-                                >
-                            </a>
-                            <a
-                                href="#"
-                                class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center hover:bg-white/20 transition-all duration-300 hover:scale-110"
-                            >
-                                <span
-                                    class="material-symbols-outlined text-white"
-                                    >mail</span
-                                >
-                            </a>
-                            <a
-                                href="#"
-                                class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center hover:bg-white/20 transition-all duration-300 hover:scale-110"
-                            >
-                                <span
-                                    class="material-symbols-outlined text-white"
-                                    >share</span
-                                >
-                            </a>
-                        </div>
-
-                        <p class="text-sm text-gray-500">
-                            © 2024 All rights reserved • Made with Figtree &
-                            Quicksand fonts
-                        </p>
-                    </div>
+                        <span class="flex items-center space-x-2">
+                            <span class="material-symbols-outlined text-sm">phone_android</span>
+                            <span>Mobile Apps</span>
+                            <span class="ml-2 px-2 py-0.5 bg-gray-100 dark:bg-gray-700 rounded-full text-xs">3</span>
+                        </span>
+                    </button>
+                    <button
+                        class="filter-btn px-6 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105 bg-white dark:bg-gray-800 text-text-heading dark:text-white shadow-md border border-gray-200 dark:border-gray-700"
+                        data-filter="website">
+                        <span class="flex items-center space-x-2">
+                            <span class="material-symbols-outlined text-sm">web</span>
+                            <span>Websites</span>
+                            <span class="ml-2 px-2 py-0.5 bg-gray-100 dark:bg-gray-700 rounded-full text-xs">4</span>
+                        </span>
+                    </button>
+                    <button
+                        class="filter-btn px-6 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105 bg-white dark:bg-gray-800 text-text-heading dark:text-white shadow-md border border-gray-200 dark:border-gray-700"
+                        data-filter="ai">
+                        <span class="flex items-center space-x-2">
+                            <span class="material-symbols-outlined text-sm">psychology</span>
+                            <span>AI Agents</span>
+                            <span class="ml-2 px-2 py-0.5 bg-gray-100 dark:bg-gray-700 rounded-full text-xs">3</span>
+                        </span>
+                    </button>
                 </div>
-            </footer>
-        </div>
+            </div>
+        </section>
 
-        <script>
-            const projects = [
-                {
-                    title: "Aura Finance Dashboard",
-                    desc: "Real-time financial analytics platform with advanced data visualization and predictive insights",
-                    tags: ["React", "D3.js", "TypeScript", "Node.js"],
-                    category: "dashboard",
-                    img: "https://i.pinimg.com/1200x/14/06/bd/1406bd2f617ebb1513d22693038a259b.jpg",
-                },
-                {
-                    title: "Quantum Analytics",
-                    desc: "Scientific data visualization platform for complex research datasets",
-                    tags: ["Vue.js", "WebGL", "Python"],
-                    category: "dashboard",
-                    img: "https://i.pinimg.com/736x/45/2a/97/452a97c2e355344757aee72d44a00166.jpg",
-                },
-                {
-                    title: "Restaurant Website",
-                    desc: "Modern restaurant website with 3D menu visualization and booking system",
-                    tags: ["Next.js", "Three.js", "Booking"],
-                    category: "website",
-                    img: "https://i.pinimg.com/736x/1c/07/ab/1c07abe2f1eac35e1d00a623e85deb28.jpg",
-                },
-                {
-                    title: "Resort Website",
-                    desc: "Professional resort website with smart booking and recommendation system",
-                    tags: ["React", "Booking", "Tourism"],
-                    category: "website",
-                    img: "https://i.pinimg.com/736x/c6/a0/c9/c6a0c91bef49798ff7d3fcc8b3797677.jpg",
-                },
-                {
-                    title: "HealthTrack Pro",
-                    desc: "AI-powered health monitoring and wellness tracking application",
-                    tags: ["React Native", "TensorFlow", "Healthcare"],
-                    category: "mobile",
-                    img: "https://i.pinimg.com/1200x/0c/03/a0/0c03a07752e799f53e96f5dcb1b03ee4.jpg",
-                },
-                {
-                    title: "Law Firm Website",
-                    desc: "Professional legal services website with case management portal",
-                    tags: ["React", "Tailwind", "CMS"],
-                    category: "website",
-                    img: "https://i.pinimg.com/736x/35/6f/ec/356fec73107c338621fccd551be9b0b9.jpg",
-                },
-                {
-                    title: "SalesFlow Pro",
-                    desc: "Predictive CRM dashboard with AI-powered sales forecasting",
-                    tags: ["React", "AI", "CRM", "Analytics"],
-                    category: "dashboard",
-                    img: "https://i.pinimg.com/1200x/95/30/ce/9530ce5a394d26c2154be5edd6b5be95.jpg",
-                },
-                {
-                    title: "Studio X",
-                    desc: "Creative agency portfolio with immersive animations and interactions",
-                    tags: ["Astro", "GSAP", "WebGL"],
-                    category: "website",
-                    img: "https://i.pinimg.com/1200x/27/30/7c/27307c0ed4cb5500cd085ea06bc16b57.jpg",
-                },
-                {
-                    title: "EcomPulse",
-                    desc: "High-performance e-commerce platform with real-time inventory management",
-                    tags: ["Vite", "Vercel", "Stripe"],
-                    category: "website",
-                    img: "https://i.pinimg.com/736x/93/a3/fc/93a3fc5f4fe87125b6579784e9496c06.jpg",
-                },
-                {
-                    title: "AI Agent for Real Estate",
-                    desc: "AI-powered assistant for property search, valuation, and recommendations",
-                    tags: ["AI", "Machine Learning", "Real Estate"],
-                    category: "ai",
-                    img: "https://i.pinimg.com/736x/24/ef/71/24ef718713e696390b3e86e410ae431e.jpg",
-                },
-                {
-                    title: "IntelliAgent",
-                    desc: "Autonomous customer support agent with natural language processing",
-                    tags: ["N8N", "LangChain", "OpenAI"],
-                    category: "ai",
-                    img: "https://i.pinimg.com/736x/eb/fb/58/ebfb58e3fcb89005828bd2b25447f332.jpg",
-                },
-                {
-                    title: "ContentEngine",
-                    desc: "AI-powered marketing content generator for social media and blogs",
-                    tags: ["Llama 3", "FastAPI", "Marketing"],
-                    category: "ai",
-                    img: "https://i.pinimg.com/736x/66/12/48/66124840af89551a0cf89a25b9a9684b.jpg",
-                },
-            ];
+        <!-- Projects Grid -->
+        <main class="flex-1 px-6 pb-16">
+            <div class="container mx-auto max-w-7xl">
+                <div id="projects-container"
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 auto-rows-fr">
+                    <!-- Loading skeletons -->
+                    <div class="shimmer h-80 rounded-3xl"></div>
+                    <div class="shimmer h-80 rounded-3xl"></div>
+                    <div class="shimmer h-80 rounded-3xl"></div>
+                    <div class="shimmer h-80 rounded-3xl"></div>
+                </div>
+            </div>
+        </main>
 
-            const container = document.getElementById("projects-container");
-            let loadingCard = null;
-
-            function showLoader(projectTitle, cardElement, button) {
-                loadingCard = projectTitle;
-
-                // Add loader overlay to card
-                const loader = document.createElement("div");
-                loader.className =
-                    "card-loader absolute inset-0 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm z-10 flex items-center justify-center rounded-3xl";
-                loader.innerHTML = `
-                    <div class="text-center">
-                        <div class="animate-spin rounded-full h-12 w-12 border-4 border-primary border-t-transparent mx-auto mb-4"></div>
-                        <p class="text-primary font-semibold">Loading project...</p>
+        <!-- Enhanced Footer -->
+        <footer class="bg-text-heading dark:bg-background-dark border-t border-gray-200 dark:border-dark-border">
+            <div class="container mx-auto max-w-6xl px-6 py-12">
+                <div class="text-center">
+                    <div class="flex items-center justify-center space-x-2 mb-4">
+                        <span class="material-symbols-outlined text-primary text-2xl">code</span>
+                        <span class="text-xl font-display font-bold text-white">Portfolio Showcase</span>
                     </div>
-                `;
-                cardElement.style.position = "relative";
-                cardElement.appendChild(loader);
+                    <p class="text-gray-400 mb-6">Crafted with passion and modern technology</p>
 
-                // Update button state
-                button.disabled = true;
-                button.innerHTML = `
-                    <div class="animate-spin rounded-full h-5 w-5 border-2 border-white border-t-transparent"></div>
-                    <span>Loading...</span>
-                `;
+                    <!-- Social Links -->
+                    <div class="flex justify-center space-x-6 mb-6">
+                        <a href="#"
+                            class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center hover:bg-white/20 transition-all duration-300 hover:scale-110">
+                            <span class="material-symbols-outlined text-white">link</span>
+                        </a>
+                        <a href="#"
+                            class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center hover:bg-white/20 transition-all duration-300 hover:scale-110">
+                            <span class="material-symbols-outlined text-white">mail</span>
+                        </a>
+                        <a href="#"
+                            class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center hover:bg-white/20 transition-all duration-300 hover:scale-110">
+                            <span class="material-symbols-outlined text-white">share</span>
+                        </a>
+                    </div>
 
-                // Simulate loading delay
-                setTimeout(() => {
-                    hideLoader(cardElement, button);
-                    console.log(`Navigating to project: ${projectTitle}`);
-                }, 2000);
+                    <p class="text-sm text-gray-500">© 2025 All rights reserved • Made with Figtree & Quicksand fonts
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const projects = [
+            {
+                title: "Aura Finance Dashboard",
+                desc: "Real-time financial analytics platform for enterprise reporting with advanced data visualization",
+                tags: ["React", "D3.js", "TypeScript"],
+                category: "dashboard",
+                img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDmiqNRkzNxkFO0WjJJEadLZ9yCC3v6zejqskpwjvmxzt3bEgEvYHo6FSGq2tWgXh_MMA1YwwmwhqkJiaTnmK6zu6pFgTBPGOhTLpbpSAQy1BZeYpSyqbRR9sOeGuwch2yBnAHuCgz5_ndCBA0Ew85m0KmCN_v65kHAL-UedneqBIQvRTXeKYugZSzgP4PKXYWLO-kQlrhCWpytbN8eGsBfO8yJhXaCTPlqAiri-ISiWLWmPxZzW5YLZIPVre0Lu1RJ9-w43Kp4-AM",
+            },
+            {
+                title: "Quantum Analytics",
+                desc: "Scientific data visualization suite for research teams with real-time collaboration",
+                tags: ["Vue.js", "WebGL", "Python"],
+                category: "dashboard",
+                img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+            },
+            {
+                title: "SalesFlow Pro",
+                desc: "Predictive CRM dashboard with AI-powered insights and automated workflows",
+                tags: ["Next.js", "Chart.js", "AI"],
+                category: "dashboard",
+                img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+            },
+            {
+                title: "ConnectSphere",
+                desc: "Professional networking mobile app with advanced matchmaking algorithms",
+                tags: ["SwiftUI", "Firebase", "iOS"],
+                category: "mobile",
+                img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDn4N0wASVSreca7uVqmI9Z94GQfUcQzmdZ8LEmp5Vc_a7wE1jEiaq2p1WNFtokHU1ruI1dtnZ6BJ9_9rJzOUle8F7OknEVzBD2zEthGSuW1PoX_9D2Lqzvvf2Nl_Cnk0OUqBMIS5PhA2xBuKDx0gZagZ7VhWSeeIQTV-TmDmku_xr2K5MAUN5Y9zEUMyS3gIuvqXSvBvCvZnPb-1lX3ChGigv-w7RhZ3YuaAeaUDVzb9LykFecAE_nH-NAYnuO1WM6Ol45hdeDhn8",
+            },
+            {
+                title: "HealthTrack Pro",
+                desc: "AI-powered health monitoring app with personalized insights and recommendations",
+                tags: ["React Native", "TensorFlow", "Healthcare"],
+                category: "mobile",
+                img: "https://i.pinimg.com/1200x/a3/5c/33/a35c33e8813ed8b6bfe1ec40e9d03ddf.jpg",
+            },
+            {
+                title: "TaskFlow",
+                desc: "Smart productivity app with intelligent task prioritization and team collaboration",
+                tags: ["Flutter", "Dart", "Productivity"],
+                category: "mobile",
+                img: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80",
+            },
+            {
+                title: "Nexus Corporate",
+                desc: "Enterprise website with stunning 3D animations and modern interactions",
+                tags: ["Next.js", "Framer Motion", "3D"],
+                category: "website",
+                img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80",
+            },
+            {
+                title: "Studio X",
+                desc: "Creative agency portfolio with cinematic animations and immersive storytelling",
+                tags: ["Astro", "GSAP", "Creative"],
+                category: "website",
+                img: "https://images.unsplash.com/photo-1547658719-da2bb9504ded?w=800&q=80",
+            },
+            {
+                title: "EcomPulse",
+                desc: "Blazing-fast e-commerce platform with advanced analytics and personalization",
+                tags: ["Shopify", "Vercel", "E-commerce"],
+                category: "website",
+                img: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80",
+            },
+            {
+                title: "LearnFlow",
+                desc: "Interactive learning platform with gamification and progress tracking",
+                tags: ["Remix", "Stripe", "EdTech"],
+                category: "website",
+                img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80",
+            },
+            {
+                title: "IntelliAgent",
+                desc: "Autonomous customer support agent with natural language processing capabilities",
+                tags: ["N8N", "LangChain", "OpenAI"],
+                category: "ai",
+                img: "https://i.pinimg.com/736x/55/3a/8c/553a8cf3426a3414dd4447bfcaf931cd.jpg",
+            },
+            {
+                title: "CodeBot",
+                desc: "AI pair programmer that writes, reviews, and optimizes code in real-time",
+                tags: ["Node.js", "Claude", "VS Code"],
+                category: "ai",
+                img: "https://images.unsplash.com/photo-1518432031352-d65fc8c30204?w=800&q=80",
+            },
+            {
+                title: "ContentEngine",
+                desc: "AI-powered marketing content generator with brand voice consistency",
+                tags: ["Llama 3", "FastAPI", "Marketing"],
+                category: "ai",
+                img: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&q=80",
+            },
+        ];
+
+        const container = document.getElementById("projects-container");
+
+        function renderProjects(filter = "all") {
+            // Clear loading skeletons
+            container.innerHTML = "";
+
+            // Filter projects
+            const filtered = filter === "all" ? projects : projects.filter((p) => p.category === filter);
+
+            // Adjust grid based on number of items
+            if (filtered.length <= 3) {
+                container.className = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-fr max-w-4xl mx-auto";
+            } else {
+                container.className = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 auto-rows-fr";
             }
 
-            function hideLoader(cardElement, button) {
-                loadingCard = null;
-                const loader = cardElement.querySelector(".card-loader");
-                if (loader) {
-                    loader.remove();
-                }
+            filtered.forEach((proj, i) => {
+                const card = document.createElement("div");
+                card.className = "opacity-0 translate-y-10 transition-all duration-700 ease-out";
+                card.style.transitionDelay = `${i * 120}ms`;
 
-                // Reset button state
-                button.disabled = false;
-                button.innerHTML = `
-                    <span>View Case Study</span>
-                    <span class="material-symbols-outlined text-sm transition-transform duration-300 group-hover/button:translate-x-1">arrow_forward</span>
-                `;
-            }
+                // Get category color
+                const categoryColors = {
+                    dashboard: "bg-blue-500/10 text-blue-600 dark:text-blue-400",
+                    mobile: "bg-green-500/10 text-green-600 dark:text-green-400",
+                    website: "bg-purple-500/10 text-purple-600 dark:text-purple-400",
+                    ai: "bg-orange-500/10 text-orange-600 dark:text-orange-400"
+                };
 
-            function renderProjects(filter = "all") {
-                // Clear loading skeletons
-                container.innerHTML = "";
-
-                // Filter projects
-                const filtered =
-                    filter === "all"
-                        ? projects
-                        : projects.filter((p) => p.category === filter);
-
-                // Adjust grid based on number of items
-                if (filtered.length <= 3) {
-                    container.className =
-                        "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-fr max-w-4xl mx-auto";
-                } else {
-                    container.className =
-                        "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 auto-rows-fr";
-                }
-
-                filtered.forEach((proj, i) => {
-                    const card = document.createElement("div");
-                    card.className =
-                        "opacity-0 translate-y-10 transition-all duration-700 ease-out";
-                    card.style.transitionDelay = `${i * 120}ms`;
-
-                    // Get category color
-                    const categoryColors = {
-                        dashboard:
-                            "bg-blue-500/10 text-blue-600 dark:text-blue-400",
-                        mobile: "bg-green-500/10 text-green-600 dark:text-green-400",
-                        website:
-                            "bg-purple-500/10 text-purple-600 dark:text-purple-400",
-                        ai: "bg-orange-500/10 text-orange-600 dark:text-orange-400",
-                    };
-
-                    card.innerHTML = `
+                card.innerHTML = `
                         <article class="group flex flex-col h-full bg-white dark:bg-card-dark rounded-3xl overflow-hidden shadow-xl border border-gray-100 dark:border-dark-border hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 hover:scale-105">
                             <!-- Image Container -->
                             <div class="relative aspect-[4/3] overflow-hidden bg-gray-50 dark:bg-gray-800">
@@ -763,18 +538,18 @@
                                 <!-- Tags -->
                                 <div class="flex flex-wrap gap-2">
                                     ${proj.tags
-                                        .map(
-                                            (tag, index) => `
+                        .map(
+                            (tag, index) => `
                                         <span class="px-3 py-1.5 text-xs font-medium rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 transition-colors duration-300 hover:bg-primary/10 hover:text-primary" style="animation-delay: ${index * 100}ms;">
                                             ${tag}
                                         </span>
-                                    `,
-                                        )
-                                        .join("")}
+                                    `
+                        )
+                        .join("")}
                                 </div>
 
                                 <!-- CTA Button -->
-                                <button class="project-button w-full py-3.5 bg-gradient-to-r from-primary to-secondary text-white font-display font-semibold rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2 group/button" data-project="${proj.title}">
+                                <button class="w-full py-3.5 bg-gradient-to-r from-primary to-secondary text-white font-display font-semibold rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2 group/button">
                                     <span>View Case Study</span>
                                     <span class="material-symbols-outlined text-sm transition-transform duration-300 group-hover/button:translate-x-1">arrow_forward</span>
                                 </button>
@@ -782,142 +557,100 @@
                         </article>
                     `;
 
-                    container.appendChild(card);
-
-                    // Add click event listener to the button
-                    const button = card.querySelector(".project-button");
-                    const cardElement = card.querySelector(".group");
-
-                    button.addEventListener("click", (e) => {
-                        e.preventDefault();
-                        if (loadingCard) return; // Prevent multiple clicks
-
-                        const projectTitle = button.dataset.project;
-                        showLoader(projectTitle, cardElement, button);
-                    });
-
-                    setTimeout(() => {
-                        card.classList.replace("opacity-0", "opacity-100");
-                        card.classList.replace(
-                            "translate-y-10",
-                            "translate-y-0",
-                        );
-                    }, 100);
-                });
-            }
-
-            // Filter functionality
-            document.querySelectorAll(".filter-btn").forEach((btn) => {
-                btn.addEventListener("click", () => {
-                    // Update active button
-                    document.querySelectorAll(".filter-btn").forEach((b) => {
-                        b.classList.remove(
-                            "bg-primary",
-                            "text-white",
-                            "shadow-lg",
-                        );
-                        b.classList.add(
-                            "bg-white",
-                            "dark:bg-gray-800",
-                            "text-text-heading",
-                            "dark:text-white",
-                            "shadow-md",
-                            "border",
-                            "border-gray-200",
-                            "dark:border-gray-700",
-                        );
-                    });
-
-                    btn.classList.add("bg-primary", "text-white", "shadow-lg");
-                    btn.classList.remove(
-                        "bg-white",
-                        "dark:bg-gray-800",
-                        "text-text-heading",
-                        "dark:text-white",
-                        "shadow-md",
-                        "border",
-                        "border-gray-200",
-                        "dark:border-gray-700",
-                    );
-
-                    // Render filtered projects
-                    renderProjects(btn.dataset.filter);
-                });
+                container.appendChild(card);
+                setTimeout(() => {
+                    card.classList.replace("opacity-0", "opacity-100");
+                    card.classList.replace("translate-y-10", "translate-y-0");
+                }, 100);
             });
+        }
 
-            // Home button functionality
-            document
-                .getElementById("home-btn")
-                .addEventListener("click", () => {
-                    window.location.href = "/";
+        // Filter functionality
+        document.querySelectorAll(".filter-btn").forEach((btn) => {
+            btn.addEventListener("click", () => {
+                // Update active button
+                document.querySelectorAll(".filter-btn").forEach((b) => {
+                    b.classList.remove("bg-primary", "text-white", "shadow-lg");
+                    b.classList.add("bg-white", "dark:bg-gray-800", "text-text-heading", "dark:text-white", "shadow-md", "border", "border-gray-200", "dark:border-gray-700");
                 });
 
-            // Theme toggle functionality
-            const themeToggle = document.getElementById("theme-toggle");
-            const sunIcon = document.getElementById("sun-icon");
-            const moonIcon = document.getElementById("moon-icon");
-            const html = document.documentElement;
+                btn.classList.add("bg-primary", "text-white", "shadow-lg");
+                btn.classList.remove("bg-white", "dark:bg-gray-800", "text-text-heading", "dark:text-white", "shadow-md", "border", "border-gray-200", "dark:border-gray-700");
 
-            // Check for saved theme preference
-            const currentTheme = localStorage.getItem("theme");
-            const prefersDark = window.matchMedia(
-                "(prefers-color-scheme: dark)",
-            ).matches;
+                // Render filtered projects
+                renderProjects(btn.dataset.filter);
+            });
+        });
 
-            if (currentTheme === "dark" || (!currentTheme && prefersDark)) {
-                html.classList.add("dark");
+        // Home button functionality
+        document.getElementById("home-btn").addEventListener("click", () => {
+            window.location.href = "/";
+        });
+
+        // Theme toggle functionality
+        const themeToggle = document.getElementById("theme-toggle");
+        const sunIcon = document.getElementById("sun-icon");
+        const moonIcon = document.getElementById("moon-icon");
+        const html = document.documentElement;
+
+        // Check for saved theme preference
+        const currentTheme = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+        if (currentTheme === "dark" || (!currentTheme && prefersDark)) {
+            html.classList.add("dark");
+            sunIcon.classList.remove("hidden");
+            moonIcon.classList.add("hidden");
+        } else {
+            html.classList.remove("dark");
+            sunIcon.classList.add("hidden");
+            moonIcon.classList.remove("hidden");
+        }
+
+        themeToggle.addEventListener("click", () => {
+            html.classList.toggle("dark");
+
+            if (html.classList.contains("dark")) {
+                localStorage.setItem("theme", "dark");
                 sunIcon.classList.remove("hidden");
                 moonIcon.classList.add("hidden");
             } else {
-                html.classList.remove("dark");
+                localStorage.setItem("theme", "light");
                 sunIcon.classList.add("hidden");
                 moonIcon.classList.remove("hidden");
             }
+        });
 
-            themeToggle.addEventListener("click", () => {
-                html.classList.toggle("dark");
+        // Initialize page
+        setTimeout(() => {
+            renderProjects();
+        }, 500);
 
-                if (html.classList.contains("dark")) {
-                    localStorage.setItem("theme", "dark");
-                    sunIcon.classList.remove("hidden");
-                    moonIcon.classList.add("hidden");
-                } else {
-                    localStorage.setItem("theme", "light");
-                    sunIcon.classList.add("hidden");
-                    moonIcon.classList.remove("hidden");
-                }
-            });
+        // Add some dynamic particles
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'particle w-2 h-2 bg-primary/10 fixed rounded-full pointer-events-none z-0';
+            particle.style.left = Math.random() * 100 + 'vw';
+            particle.style.top = Math.random() * 100 + 'vh';
+            particle.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            document.body.appendChild(particle);
 
-            // Initialize page
             setTimeout(() => {
-                renderProjects();
-            }, 500);
+                particle.remove();
+            }, 5000);
+        }
 
-            // Add some dynamic particles
-            function createParticle() {
-                const particle = document.createElement("div");
-                particle.className =
-                    "particle w-2 h-2 bg-primary/10 fixed rounded-full pointer-events-none z-0";
-                particle.style.left = Math.random() * 100 + "vw";
-                particle.style.top = Math.random() * 100 + "vh";
-                particle.style.animationDuration = Math.random() * 3 + 2 + "s";
-                document.body.appendChild(particle);
+        // Create particles periodically
+        setInterval(createParticle, 2000);
 
-                setTimeout(() => {
-                    particle.remove();
-                }, 5000);
-            }
+        // Smooth scroll behavior
+        document.documentElement.style.scrollBehavior = 'smooth';
 
-            // Create particles periodically
-            setInterval(createParticle, 2000);
+        // Add loading animation
+        window.addEventListener('load', () => {
+            document.body.classList.add('animate-fade-in');
+        });
+    </script>
+</body>
 
-            // Smooth scroll behavior
-            document.documentElement.style.scrollBehavior = "smooth";
-
-            // Add loading animation
-            window.addEventListener("load", () => {
-                document.body.classList.add("animate-fade-in");
-            });
-        </script>
-    </body>
 </html>

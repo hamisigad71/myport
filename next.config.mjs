@@ -21,12 +21,7 @@ const nextConfig = {
     : {}),
   images: {
     unoptimized: true,
-    domains: [
-      "fonts.gstatic.com",
-      "fonts.googleapis.com",
-      "i.pinimg.com",
-      "images.unsplash.com",
-    ],
+    domains: ["fonts.gstatic.com", "fonts.googleapis.com"],
   },
   // Prevent chunk loading errors
   experimental: {

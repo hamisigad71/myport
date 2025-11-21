@@ -2,6 +2,7 @@
 
 import React, { useMemo, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   portfolioCategories,
   portfolioProjects,
@@ -17,7 +18,7 @@ const Portfolio = () => {
       activeCategory === "all"
         ? portfolioProjects
         : portfolioProjects.filter(
-            (project) => project.category === activeCategory
+            (project) => project.category === activeCategory,
           );
     return matching.slice(0, 6);
   }, [activeCategory]);
@@ -66,12 +67,15 @@ const Portfolio = () => {
               key={project.title}
               className="flex flex-col overflow-hidden rounded-2xl border border-gray-200/80 bg-white shadow-lg dark:border-gray-800/80 dark:bg-gray-900/60"
             >
-              <div
-                role="img"
-                aria-label={project.alt}
-                className="aspect-video w-full bg-cover bg-center"
-                style={{ backgroundImage: `url(${project.image})` }}
-              />
+              <div className="relative aspect-video w-full overflow-hidden">
+                <Image
+                  src={project.image}
+                  alt={project.alt}
+                  fill
+                  className="object-cover w-full h-full transition-transform duration-300 hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+              </div>
               <div className="flex grow flex-col gap-4 p-6">
                 <div>
                   <h3 className="text-xl font-semibold text-[#212529] dark:text-white">

@@ -45,9 +45,9 @@ export const portfolioProjects: PortfolioProject[] = [
     title: "Law Firm website",
     description: "Smart productivity app",
     image:
-      "https://i.pinimg.com/736x/38/ac/ab/38acab4c5d557f6e50d411e145bf1c05.jpg",
+      "https://i.pinimg.com/736x/37/29/95/372995bdd8c28323c991a490af676b6a.jpg",
     alt: "Law firm website UI",
-    tags: ["React"],
+    tags: ["React ", "Next.js"],
     href: caseStudyPath,
     category: "websites",
   },
@@ -91,7 +91,7 @@ export const portfolioProjects: PortfolioProject[] = [
     alt: "CRM dashboard mock",
     tags: ["Next.js", "Chart.js"],
     href: caseStudyPath,
-    category: "dashboards",
+    category: "ai-agents",
   },
   {
     title: "ConnectSphere",
@@ -122,7 +122,7 @@ export const portfolioProjects: PortfolioProject[] = [
     alt: "Enterprise landing page",
     tags: ["Next.js", "Framer"],
     href: caseStudyPath,
-    category: "websites",
+    category: "ai-agents",
   },
   {
     title: "Studio X",

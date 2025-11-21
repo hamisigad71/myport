@@ -223,7 +223,7 @@ const PortfolioPage = () => {
                 </div>
                 <div>
                   <h1 className="text-2xl font-quicksand font-bold text-white">
-                    Portfolio Showcase
+                   Project Showcase
                   </h1>
                   <p className="text-sm text-white/70">Creative Developer</p>
                 </div>
@@ -273,7 +273,7 @@ const PortfolioPage = () => {
               <h2 className="text-5xl md:text-6xl font-quicksand font-bold mb-6 leading-tight">
                 My Creative
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-500 ml-4">
-                  Portfolio
+                  Projects
                 </span>
               </h2>
               <p className="text-xl md:text-2xl mb-8 text-white/80 max-w-2xl mx-auto leading-relaxed">
